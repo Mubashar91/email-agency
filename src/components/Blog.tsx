@@ -18,7 +18,7 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: "Brand Identity 101: Logo, Color, Type, Voice",
+    title: "Brand Identit y 101: Logo, Color, Type, Voice",
     excerpt: "A practical framework for building a memorable brand system that scales across print and digital.",
     content: `
       <h2>Core Elements</h2>
