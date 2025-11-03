@@ -55,10 +55,10 @@ export const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         scrolled
-          ? "bg-background/95 backdrop-blur-xl border-b border-border/50 shadow-lg shadow-black/5"
-          : "bg-background/80 backdrop-blur-sm"
+          ? "bg-background/98 backdrop-blur-xl border-b border-border/60 shadow-lg shadow-black/[0.08]"
+          : "bg-background/90 backdrop-blur-md"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 md:px-6 lg:px-10 xl:px-12">
@@ -98,7 +98,7 @@ export const Navbar = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                className="relative text-[hsl(250,50%,20%)] dark:text-foreground hover:text-[hsl(217,91%,65%)] dark:hover:text-gold transition-all duration-300 font-medium text-sm md:text-sm lg:text-base px-2 md:px-2.5 lg:px-3 py-2 rounded-lg hover:bg-[hsl(250,100%,98%)] dark:hover:bg-gold/10 group whitespace-nowrap"
+                className="relative text-[hsl(222,47%,20%)] dark:text-foreground hover:text-[hsl(217,91%,60%)] dark:hover:text-gold transition-all duration-200 font-semibold text-sm md:text-sm lg:text-base px-2 md:px-2.5 lg:px-3 py-2 rounded-lg hover:bg-[hsl(210,40%,98%)] dark:hover:bg-gold/10 group whitespace-nowrap"
               >
                 {item.name}
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[hsl(217,91%,65%)] to-[hsl(220,90%,60%)] group-hover:w-3/4 transition-all duration-300" />

@@ -22,10 +22,37 @@ export const Hero = () => {
       className="relative min-h-screen flex items-center bg-background text-foreground overflow-hidden pt-16 sm:pt-20 md:pt-0"
       style={{ opacity }}
     >
-      {/* Animated background */}
+      {/* Animated background with futuristic grid */}
       <motion.div 
         className="absolute inset-0 bg-gradient-to-br from-background via-background to-[hsl(var(--brand-blue)/0.08)] z-0"
         style={{ y }}
+      />
+      
+      {/* Futuristic floating orbs */}
+      <motion.div
+        className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-[hsl(var(--gold))]/20 to-[hsl(var(--brand-blue))]/20 rounded-full blur-3xl"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.5, 0.3],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+      <motion.div
+        className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-tr from-[hsl(var(--brand-blue))]/20 to-[hsl(var(--gold))]/20 rounded-full blur-3xl"
+        animate={{
+          scale: [1, 1.3, 1],
+          opacity: [0.2, 0.4, 0.2],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1
+        }}
       />
       
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-4 py-8 sm:py-12 md:py-16 lg:py-20 relative z-10">
@@ -68,11 +95,11 @@ export const Hero = () => {
               </motion.span>
             </motion.div>
             
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-5 md:mb-6 leading-[1.15] sm:leading-[1.12] md:leading-[1.1] text-[hsl(222,47%,11%)] dark:text-foreground">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extrabold mb-4 sm:mb-5 md:mb-6 leading-[1.15] sm:leading-[1.12] md:leading-[1.1] tracking-tight text-[hsl(222,47%,12%)] dark:text-white">
               Profitable <span className="bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">Ad Campaign Management</span>
             </h1>
             
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-3 sm:mb-4 md:mb-5 leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg md:text-xl lg:text-xl text-muted-foreground mb-6 sm:mb-7 md:mb-8 leading-relaxed max-w-xl font-normal">
               Plan, launch, and scale ads across Google, Meta, TikTok, Snapchat, LinkedIn, and X. Full‑funnel strategy, creatives, tracking, and weekly performance optimization.
             </p>
             
@@ -85,7 +112,7 @@ export const Hero = () => {
               <Button 
                 size="lg"
                 onClick={() => window.location.href = '/book-meeting'}
-                className="group relative w-full sm:w-auto text-sm sm:text-base md:text-lg px-8 sm:px-10 md:px-12 py-5 sm:py-6 md:py-7 h-auto font-bold bg-gradient-to-br from-[hsl(var(--gold))] via-[hsl(var(--brand-blue))] to-[hsl(var(--gold))] text-white hover:opacity-95 transform hover:scale-[1.06] hover:-translate-y-2 transition-all duration-400 cursor-pointer overflow-hidden rounded-xl border-2 border-transparent hover:border-[hsl(var(--gold))]/30 shadow-[0_20px_60px_-15px_hsl(188_80%_40%/0.35)]"
+                className="group relative w-full sm:w-auto text-sm sm:text-base md:text-lg px-8 sm:px-10 md:px-12 py-5 sm:py-6 md:py-7 h-auto font-bold bg-gradient-to-br from-[hsl(var(--gold))] via-[hsl(var(--brand-blue))] to-[hsl(var(--gold))] text-white hover:opacity-95 transform hover:scale-[1.06] hover:-translate-y-2 transition-all duration-400 cursor-pointer overflow-hidden rounded-xl border-2 border-transparent hover:border-[hsl(var(--gold))]/30 shadow-[0_20px_60px_-15px_hsl(188_80%_40%/0.35),0_0_40px_hsl(217_91%_60%/0.2)] hover:shadow-[0_25px_70px_-15px_hsl(188_80%_40%/0.5),0_0_60px_hsl(217_91%_60%/0.4)]"
                 aria-label="Book a free 30-minute design consultation"
               >
                 {/* Subtle shimmer effect */}

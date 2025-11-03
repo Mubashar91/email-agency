@@ -102,7 +102,7 @@ export const FAQ = () => {
                 >
                   <AccordionItem 
                     value={`item-${index}`}
-                    className="group bg-card border-2 border-[hsl(215,32%,91%)] dark:border-border/50 rounded-xl sm:rounded-2xl px-4 sm:px-6 md:px-8 hover:border-[hsl(var(--gold))] dark:hover:border-[hsl(var(--gold))] hover:shadow-lg transition-all duration-300 data-[state=open]:border-[hsl(var(--gold))] dark:data-[state=open]:border-[hsl(var(--gold))] data-[state=open]:shadow-xl"
+                    className="group bg-card/60 backdrop-blur-sm border border-[hsl(215,32%,91%)] dark:border-border/40 rounded-xl sm:rounded-2xl px-4 sm:px-6 md:px-8 hover:border-[hsl(var(--gold))]/60 dark:hover:border-[hsl(var(--gold))]/60 hover:shadow-[0_10px_30px_-5px_hsl(217_91%_60%/0.2)] dark:hover:shadow-[0_10px_30px_-5px_rgba(59,130,246,0.15)] transition-all duration-300 data-[state=open]:border-[hsl(var(--gold))]/70 dark:data-[state=open]:border-[hsl(var(--gold))]/70 data-[state=open]:shadow-[0_15px_40px_-5px_hsl(217_91%_60%/0.25),0_0_20px_hsl(217_91%_60%/0.1)] dark:data-[state=open]:shadow-[0_15px_40px_-5px_rgba(59,130,246,0.2),0_0_20px_rgba(59,130,246,0.08)]"
                   >
                     <AccordionTrigger className="text-left text-base sm:text-lg md:text-xl font-semibold text-[hsl(var(--gold))] dark:text-[hsl(var(--gold))] py-5 sm:py-6 hover:no-underline group-hover:text-[hsl(var(--gold))] dark:group-hover:text-[hsl(var(--gold))] transition-colors">
                       <span className="flex items-start gap-3">
