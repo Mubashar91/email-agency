@@ -14,124 +14,125 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Light Mode: White background with dark text */
-    --background: 0 0% 100%; /* Pure white background */
-    --foreground: 220 60% 45%; /* Light blue text */
+    /* Light Mode - Modern Clean */
+    --background: 0 0% 100%; /* Pure white modern background */
+    --foreground: 222 47% 15%; /* Deeper text for better contrast */
 
-    --card: 0 0% 100%; /* White cards */
-    --card-foreground: 220 55% 35%; /* Darker blue text on cards */
+    --card: 210 40% 99%; /* Subtle off-white cards */
+    --card-foreground: 222 47% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 60% 45%;
+    --popover-foreground: 222 47% 15%;
 
-    --primary: 270 80% 65%; /* Bright purple primary */
+    --primary: 217 91% 60%; /* #3B82F6 accent */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 250 100% 98%;
-    --secondary-foreground: 220 60% 45%;
+    --secondary: 215 20% 45%; /* #475569 secondary text-ish for chips */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 250 100% 98%;
-    --muted-foreground: 220 60% 45%; /* Light blue text */
+    --muted: 210 40% 97%; /* modern soft backgrounds */
+    --muted-foreground: 215 20% 40%; /* refined muted text */
 
-    --accent: 220 90% 60%; /* Bright blue accent */
+    --accent: 217 91% 60%; /* same as primary */
     --accent-foreground: 0 0% 100%;
 
-    --hover: 250 100% 98%;
-    --hover-foreground: 220 60% 45%;
+    --hover: 221 83% 53%; /* #2563EB */
+    --hover-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 63%; /* #EF4444 */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 250 40% 92%;
-    --input: 250 40% 92%;
-    --ring: 270 80% 65%;
+    --border: 220 20% 92%; /* modern subtle borders */
+    --input: 210 40% 98%; /* clean input backgrounds */
+    --ring: 217 91% 60%;
 
     --radius: 0.5rem;
 
-    /* Custom tokens tuned to bright purple/blue */
-    --gold: 270 80% 65%;      /* Bright purple highlight */
-    --gold-dark: 270 70% 55%; /* Medium purple */
-    --gold-light: 270 85% 75%; /* Light purple */
-    --brand-blue: 220 90% 60%; /* Bright blue used by brand token */
-    
-    /* Gradients */
-    --gradient-gold: linear-gradient(135deg, hsl(270 80% 65%) 0%, hsl(220 90% 60%) 100%);
-    --gradient-dark: linear-gradient(180deg, hsl(250 50% 20%) 0%, hsl(250 50% 30%) 100%);
-    
+    /* Custom tokens mapped to user palette */
+    --gold: 217 91% 60%;      /* Use as primary accent BLUE (#3B82F6) */
+    --gold-dark: 221 83% 53%; /* Accent hover BLUE (#2563EB) */
+    --gold-light: 217 92% 75%; /* Lighter blue (#60A5FA) */
+    --brand-blue: 187 92% 47%; /* Cyan (#06B6D4) for gradients */
+
+    /* Gradients - Modern vibrant */
+    --gradient-gold: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(187 92% 47%) 100%); /* blue -> cyan */
+    --gradient-dark: linear-gradient(180deg, hsl(215 28% 17%) 0%, hsl(215 25% 21%) 100%);
+    --gradient-light: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 40% 99%) 100%);
+
     /* Shadows */
-    --shadow-gold: 0 10px 40px -10px hsl(270 80% 65% / 0.3);
-    --shadow-gold-lg: 0 25px 80px -20px hsl(270 80% 65% / 0.4);
-    --shadow-elegant: 0 20px 60px -15px hsl(250 50% 30% / 0.3);
-    --shadow-brutal: 8px 8px 0px hsl(270 80% 65%);
-    
+    --shadow-gold: 0 10px 40px -10px hsl(217 91% 60% / 0.25);
+    --shadow-gold-lg: 0 25px 80px -20px hsl(217 91% 60% / 0.35);
+    --shadow-elegant: 0 20px 60px -15px hsl(215 25% 21% / 0.3);
+    --shadow-brutal: 8px 8px 0px hsl(217 91% 60%);
+
     /* Transitions */
     --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-spring: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 220 60% 45%;
-    --sidebar-primary: 270 80% 65%;
+    --sidebar-background: 210 40% 99%;
+    --sidebar-foreground: 222 47% 15%;
+    --sidebar-primary: 217 91% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 250 100% 98%;
-    --sidebar-accent-foreground: 220 60% 45%;
-    --sidebar-border: 250 40% 92%;
-    --sidebar-ring: 270 80% 65%;
+    --sidebar-accent: 210 40% 97%;
+    --sidebar-accent-foreground: 222 47% 15%;
+    --sidebar-border: 220 20% 92%;
+    --sidebar-ring: 217 91% 60%;
 
     /* Typographic + layout tokens */
-    --heading-color: 220 60% 45%; /* Light blue headings (same as body) */
+    --heading-color: 222 47% 12%; /* Deep modern headings */
     --heading-size: 1.5rem;
     --side-padding: 1.5rem;
   }
 
   .dark {
-    /* Dark Mode: Deep purple background with bright accents */
-    --background: 250 50% 18%; /* Slightly brighter deep purple background */
-    --foreground: 0 0% 100%; /* Pure white text */
+    /* Dark Mode per user palette */
+    --background: 222 47% 14%; /* slightly brighter for improved readability */
+    --foreground: 0 0% 100%; /* pure white text for maximum brightness */
 
-    --card: 250 45% 24%; /* Brighter purple surface */
-    --card-foreground: 0 0% 100%; /* White text */
+    --card: 222 47% 24%; /* brighter surface */
+    --card-foreground: 0 0% 100%; /* pure white text on cards */
 
-    --popover: 250 45% 24%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 222 47% 22%;
+    --popover-foreground: 0 0% 100%; /* pure white text in popovers */
 
-    --primary: 270 80% 70%; /* Bright purple primary */
-    --primary-foreground: 250 50% 15%; /* Dark purple text on bright */
+    --primary: 217 92% 75%; /* #60A5FA */
+    --primary-foreground: 222 47% 12%;
 
-    --secondary: 250 40% 30%; /* Brighter purple surface */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 215 20% 80%; /* #CBD5E1 */
+    --secondary-foreground: 222 47% 10%;
 
-    --muted: 250 35% 34%; /* Slightly brighter muted */
-    --muted-foreground: 0 0% 90%;
+    --muted: 222 30% 20%;
+    --muted-foreground: 0 0% 90%; /* bright muted text */
 
-    --accent: 220 90% 65%; /* Bright blue accent */
-    --accent-foreground: 0 0% 100%;
+    --accent: 217 92% 75%;
+    --accent-foreground: 222 47% 12%;
 
-    --hover: 250 45% 28%; /* Brighter hover purple */
+    --hover: 217 91% 60%; /* #3B82F6 */
     --hover-foreground: 0 0% 100%;
 
-    --destructive: 355 75% 54%;
+    --destructive: 0 91% 71%; /* #F87171 */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 250 30% 40%; /* Brighter purple borders */
-    --input: 250 30% 40%;
-    --ring: 270 80% 70%;
+    --border: 215 25% 27%; /* #334155 */
+    --input: 215 25% 27%;
+    --ring: 217 92% 75%;
     
-    --sidebar-background: 250 50% 18%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 270 80% 70%;
-    --sidebar-primary-foreground: 250 50% 15%;
-    --sidebar-accent: 250 45% 24%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 250 30% 40%;
-    --sidebar-ring: 270 80% 70%;
+    --sidebar-background: 222 47% 10%;
+    --sidebar-foreground: 0 0% 100%; /* pure white sidebar text */
+    --sidebar-primary: 217 92% 75%;
+    --sidebar-primary-foreground: 222 47% 12%;
+    --sidebar-accent: 222 47% 20%;
+    --sidebar-accent-foreground: 0 0% 100%; /* pure white sidebar accent text */
+    --sidebar-border: 215 25% 27%;
+    --sidebar-ring: 217 92% 75%;
 
-    --heading-color: 0 0% 100%; /* White headings */
-    --brand-blue: 220 90% 65%; /* Bright blue brand token */
-    --gold: 270 80% 70%; /* Bright purple accent highlight */
+    --heading-color: 0 0% 100%; /* pure white headings */
+    --brand-blue: 187 92% 47%; /* cyan for gradients */
+    --gold: 217 91% 60%; /* accent blue */
 
-    /* Dark gradient with purple tones (brighter) */
-    --gradient-dark: linear-gradient(180deg, hsl(250 50% 16%) 0%, hsl(250 50% 26%) 100%);
+    /* Dark gradient */
+    --gradient-dark: linear-gradient(180deg, hsl(222 47% 14%) 0%, hsl(222 47% 24%) 100%);
   }
 }
 

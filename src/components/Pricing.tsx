@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Check, Star } from "lucide-react";
+import { Check, Star, Gift } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -21,48 +21,48 @@ interface PricingPlan {
 
 const plans: PricingPlan[] = [
   {
-    name: "Starter",
-    hours: "Up to 1k records/mo",
-    price: 997,
+    name: "Launch",
+    hours: "Single channel (Google or Meta)",
+    price: 1499,
     setupFee: 0,
     features: [
-      "Template setup + field mapping",
-      "Manual entry with validation",
-      "Basic cleaning & deduping",
-      "Delivery: CSV/Sheets",
-      "Email support"
+      "Account audit & strategy (1x)",
+      "Campaign setup (Search/PMAX or Meta)",
+      "Pixel/GA4 event mapping",
+      "2 creatives or variants included",
+      "Weekly optimization & report"
     ],
     highlighted: false
   },
   {
-    name: "Growth",
-    hours: "Up to 10k records/mo",
-    price: 1997,
+    name: "Scale",
+    hours: "Multi‑channel (2–3 platforms)",
+    price: 3499,
     setupFee: 0,
     badge: "Most Popular",
     features: [
-      "Everything in Starter",
-      "OCR-assisted docs & forms",
-      "Bulk updates & imports",
-      "QA double-check (second pass)",
-      "Priority turnaround",
+      "Everything in Launch",
+      "PMAX + Paid Social structure",
+      "Creative testing framework",
+      "Server‑side GTM (optional)",
+      "Weekly call + Looker dashboard",
       "Priority support"
     ],
     highlighted: true
   },
   {
     name: "Enterprise",
-    hours: "50k+ records & custom",
-    price: 3997,
+    hours: "Full‑funnel (4+ platforms)",
+    price: 4999,
     setupFee: 0,
     badge: "Best Value",
     features: [
-      "Everything in Growth",
-      "Custom workflows & SLAs",
-      "CRM/DB integrations",
-      "Ongoing maintenance",
-      "Dedicated account manager",
-      "Custom dashboards & reporting"
+      "Everything in Scale",
+      "ABM + LinkedIn + X (B2B)",
+      "Lift studies & holdout tests",
+      "Landing page CRO support",
+      "Dedicated strategist",
+      "Custom SLAs & integrations"
     ],
     highlighted: false
   }
@@ -104,19 +104,61 @@ export const Pricing = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.span 
-            className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-br from-[hsl(270,80%,65%)] via-[hsl(260,85%,60%)] to-[hsl(220,90%,60%)] text-white text-xs sm:text-sm font-bold rounded-full mb-3 sm:mb-4 shadow-md"
+            className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-br from-[hsl(var(--gold))] via-[hsl(var(--brand-blue))] to-[hsl(var(--gold))] text-white text-xs sm:text-sm font-bold rounded-full mb-3 sm:mb-4 shadow-md"
             whileHover={{ scale: 1.05 }}
           >
             Transparent Pricing
           </motion.span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 text-[hsl(250,50%,20%)] dark:text-foreground leading-tight">
-            Simple, <span className="bg-gradient-to-r from-[hsl(270,80%,65%)] to-[hsl(220,90%,60%)] bg-clip-text text-transparent">Usage-Based</span> Packages
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 text-[hsl(222,47%,20%)] dark:text-foreground leading-tight">
+            Ad Campaign <span className="bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">Packages</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            Choose a data entry package sized to your volume. Scale anytime. No hidden fees.
+            Choose a plan that fits your channels and goals. Scale budgets only when unit economics hold. No hidden fees.
           </p>
         </motion.div>
 
+        {/* Free Trial Banner */}
+        <motion.div
+          className="mb-8 sm:mb-10 md:mb-12 max-w-4xl mx-auto"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[hsl(217,91%,60%)] via-[hsl(200,95%,55%)] to-[hsl(187,92%,47%)] p-[2px]">
+            <div className="relative bg-card dark:bg-background rounded-2xl p-6 sm:p-8 md:p-10">
+              {/* Animated background glow */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[hsl(217,91%,60%)]/10 via-[hsl(200,95%,55%)]/10 to-[hsl(187,92%,47%)]/10 rounded-2xl" />
+              
+              <div className="relative flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
+                <div className="flex items-start gap-4 text-center sm:text-left">
+                  <motion.div
+                    className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-[hsl(217,91%,60%)] to-[hsl(187,92%,47%)] rounded-xl flex items-center justify-center shadow-lg"
+                    animate={{ rotate: [0, 10, -10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <Gift className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                  </motion.div>
+                  <div>
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[hsl(222,47%,20%)] dark:text-white mb-2">
+                      One Week Free Trial
+                    </h3>
+                    <p className="text-sm sm:text-base text-muted-foreground">
+                      New customers get <span className="font-bold text-[hsl(217,91%,60%)] dark:text-[hsl(217,91%,75%)]">7 days free</span> on any plan. No credit card required.
+                    </p>
+                  </div>
+                </div>
+                <Button 
+                  size="lg"
+                  className="flex-shrink-0 bg-gradient-to-r from-[hsl(217,91%,60%)] to-[hsl(187,92%,47%)] text-white hover:opacity-90 transition-all duration-300 hover:scale-105 font-semibold shadow-lg px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base border-0"
+                  onClick={() => window.location.href = '/book-meeting'}
+                >
+                  Start Free Trial
+                </Button>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-7xl mx-auto">
           {plans.map((plan, index) => (
@@ -145,7 +187,7 @@ export const Pricing = () => {
                 />
               )}
               
-              <div className={`relative rounded-2xl p-6 sm:p-8 md:p-10 transition-all duration-500 group h-full bg-[hsl(250,100%,98%)] dark:bg-gradient-to-br dark:from-[hsl(250,50%,15%)] dark:via-[hsl(250,50%,18%)] dark:to-[hsl(250,50%,20%)] text-[hsl(250,50%,20%)] dark:text-white border-2 border-[hsl(250,40%,92%)] dark:border-[hsl(250,30%,35%)]/50 hover:border-[hsl(270,80%,65%)] dark:hover:border-[hsl(270,80%,65%)] hover:shadow-[0_25px_70px_-15px_rgba(167,139,250,0.25)] dark:hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)]`}>
+              <div className={`relative rounded-2xl p-6 sm:p-8 md:p-10 transition-all duration-500 group h-full bg-card text-[hsl(222,47%,20%)] dark:text-white border-2 border-[hsl(215,32%,91%)] dark:border-[hsl(250,30%,35%)]/50 hover:border-[hsl(var(--gold))] dark:hover:border-[hsl(var(--gold))] hover:shadow-[0_25px_70px_-15px_hsl(217_91%_60%/0.25)] dark:hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)]`}>
                 {/* Top accent line with animation */}
                 <motion.div 
                   className={`absolute top-0 left-0 right-0 h-1 rounded-t-2xl ${
@@ -158,7 +200,7 @@ export const Pricing = () => {
               
                 {plan.badge && (
                   <motion.div 
-                    className="absolute -top-4 right-6 px-4 py-1.5 rounded-full text-xs font-bold shadow-xl flex items-center gap-1.5 bg-[hsl(250,100%,98%)] dark:bg-[hsl(270,80%,65%)] text-[hsl(250,50%,20%)] dark:text-white"
+                    className="absolute -top-4 right-6 px-4 py-1.5 rounded-full text-xs font-bold shadow-xl flex items-center gap-1.5 bg-[hsl(250,100%,98%)] dark:bg-[hsl(var(--gold))] text-[hsl(222,47%,20%)] dark:text-white"
                     initial={{ y: -10, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.5 }}
@@ -176,15 +218,15 @@ export const Pricing = () => {
               
                 {/* Header */}
                 <div className="mb-6 relative z-10">
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-2 group-hover:scale-105 transition-transform duration-300 text-[hsl(250,50%,20%)] dark:text-white">
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-2 group-hover:scale-105 transition-transform duration-300 text-[hsl(222,47%,20%)] dark:text-white">
                     {plan.name}
                   </h3>
                   <div className="flex items-center gap-2">
-                    <p className="text-sm font-medium text-[hsl(270,80%,65%)] dark:text-[hsl(270,80%,75%)]">
+                    <p className="text-sm font-medium text-[hsl(var(--gold))] dark:text-[hsl(var(--gold))]">
                       {plan.hours}
                     </p>
-                    <span className="px-2 py-0.5 text-xs rounded-full bg-[hsl(250,100%,98%)] dark:bg-[hsl(250,45%,20%)]/50 text-[hsl(250,50%,20%)] dark:text-white">
-                      Data Entry
+                    <span className="px-2 py-0.5 text-xs rounded-full bg-card dark:bg-[hsl(250,45%,20%)]/50 text-[hsl(222,47%,20%)] dark:text-white">
+                      Ad Campaigns
                     </span>
                   </div>
                 </div>
@@ -193,24 +235,24 @@ export const Pricing = () => {
                 <div className="mb-6 pb-6 border-b border-current/10 relative z-10">
                   <div className="flex items-baseline gap-1">
                     <motion.span 
-                      className="text-5xl sm:text-6xl font-bold tracking-tight text-[hsl(250,50%,20%)] dark:text-white"
+                      className="text-5xl sm:text-6xl font-bold tracking-tight text-[hsl(222,47%,20%)] dark:text-white"
                       initial={{ scale: 0.5, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
                       transition={{ type: "spring", duration: 0.8, delay: 0.4 }}
                     >
                       ${plan.price}
                     </motion.span>
-                    <span className="text-base ml-1 text-[hsl(270,80%,65%)] dark:text-[hsl(270,80%,75%)]">
+                    <span className="text-base ml-1 text-[hsl(var(--gold))] dark:text-[hsl(var(--gold))]">
                       /mo
                     </span>
                   </div>
                   {plan.setupFee > 0 ? (
-                    <p className="text-xs mt-2 text-[hsl(270,80%,65%)] dark:text-[hsl(270,80%,75%)]">
+                    <p className="text-xs mt-2 text-[hsl(var(--gold))] dark:text-[hsl(var(--gold))]">
                       + ${plan.setupFee} setup fee
                     </p>
                   ) : (
-                    <p className="text-xs mt-2 font-semibold flex items-center gap-1 text-[hsl(250,50%,20%)] dark:text-[hsl(270,80%,85%)]">
-                      <Check className="w-3.5 h-3.5 text-[hsl(250,50%,20%)] dark:text-[hsl(270,80%,85%)]" />
+                    <p className="text-xs mt-2 font-semibold flex items-center gap-1 text-[hsl(222,47%,20%)] dark:text-white">
+                      <Check className="w-3.5 h-3.5 text-[hsl(222,47%,20%)] dark:text-white" />
                       No setup fee
                     </p>
                   )}
@@ -226,10 +268,10 @@ export const Pricing = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.5 + fIndex * 0.1 }}
                     >
-                      <div className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 transition-all duration-300 group-hover:scale-110 bg-[hsl(250,100%,98%)] dark:bg-[hsl(250,45%,20%)]/50 group-hover:bg-[hsl(250,90%,97%)] dark:group-hover:bg-[hsl(250,45%,22%)]/70">
-                        <Check className="w-3 h-3 text-[hsl(250,50%,20%)] dark:text-[hsl(270,80%,85%)]" />
+                      <div className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 transition-all duration-300 group-hover:scale-110 bg-[hsl(220,100%,98%)] dark:bg-card group-hover:bg-[hsl(215,32%,91%)]/60 dark:group-hover:bg-card/70">
+                        <Check className="w-3 h-3 text-[hsl(222,47%,20%)] dark:text-white" />
                       </div>
-                      <span className="text-sm leading-relaxed text-card-foreground dark:text-[hsl(270,80%,85%)]">
+                      <span className="text-sm leading-relaxed text-card-foreground dark:text-white">
                         {feature}
                       </span>
                     </motion.li>
@@ -240,12 +282,12 @@ export const Pricing = () => {
                 <Button 
                   size="lg"
                   onClick={() => window.location.href = '/book-meeting'}
-                  className="w-full relative z-10 font-bold text-base py-6 sm:py-7 rounded-xl transition-all duration-300 group/btn overflow-hidden min-h-[44px] bg-gradient-to-br from-[hsl(270,80%,65%)] via-[hsl(260,85%,60%)] to-[hsl(220,90%,60%)] text-white hover:from-[hsl(270,85%,70%)] hover:via-[hsl(260,90%,65%)] hover:to-[hsl(220,95%,65%)] hover:scale-105 border-0"
-                  aria-label={`Get started with ${plan.name} plan - ${plan.hours} per week at ${Math.round(plan.price * (1 - discount) * vaCount)} per month`}
+                  className="w-full relative z-10 font-bold text-base py-6 sm:py-7 rounded-xl transition-all duration-300 group/btn overflow-hidden min-h-[44px] bg-gradient-to-br from-[hsl(var(--gold))] via-[hsl(var(--brand-blue))] to-[hsl(var(--gold))] text-white hover:opacity-95 hover:scale-105 border-0"
+                  aria-label={`Get started with ${plan.name} plan - ${plan.hours} at ${Math.round(plan.price * (1 - discount) * vaCount)} per month`}
                 >
                   {/* Button shine effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover/btn:translate-x-[200%] transition-transform duration-700" aria-hidden="true" />
-                  <span className="relative">Get Free Sample</span>
+                  <span className="relative">Start Free Audit</span>
                 </Button>
               </div>
             </motion.div>

@@ -51,7 +51,7 @@ export const Hero = () => {
                 stiffness: 120,
                 damping: 20
               }}
-              className="inline-block mb-3 sm:mb-4 md:mb-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-br from-[hsl(270,80%,65%)] via-[hsl(260,85%,60%)] to-[hsl(220,90%,60%)] border border-[hsl(270,80%,65%)]/30 rounded-full text-white text-xs sm:text-sm font-semibold hover:scale-105 transition-all duration-300 cursor-default"
+              className="inline-block mb-3 sm:mb-4 md:mb-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-br from-[hsl(var(--gold))] via-[hsl(var(--brand-blue))] to-[hsl(var(--gold))] border border-[hsl(var(--gold))]/30 rounded-full text-white text-xs sm:text-sm font-semibold hover:scale-105 transition-all duration-300 cursor-default"
             >
               <motion.span
                 animate={{ 
@@ -64,16 +64,16 @@ export const Hero = () => {
                 }}
                 className="text-white"
               >
-                Trusted by 300+ Creative Brands Worldwide
+                Trusted by 300+ Growth Teams Worldwide
               </motion.span>
             </motion.div>
             
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-5 md:mb-6 leading-[1.15] sm:leading-[1.12] md:leading-[1.1] text-[hsl(250,50%,20%)] dark:text-foreground">
-              Stunning Visual <span className="bg-gradient-to-r from-[hsl(270,80%,65%)] to-[hsl(220,90%,60%)] dark:from-[hsl(var(--gold))] dark:to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">Design Solutions</span>
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-5 md:mb-6 leading-[1.15] sm:leading-[1.12] md:leading-[1.1] text-[hsl(222,47%,11%)] dark:text-foreground">
+              Profitable <span className="bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">Ad Campaign Management</span>
             </h1>
             
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-3 sm:mb-4 md:mb-5 leading-relaxed max-w-xl">
-              Brand identity, UI/UX design, marketing materials, and digital experiences that captivate audiences and drive results. Creative excellence delivered on time.
+              Plan, launch, and scale ads across Google, Meta, TikTok, Snapchat, LinkedIn, and X. Full‑funnel strategy, creatives, tracking, and weekly performance optimization.
             </p>
             
             <motion.div
@@ -85,7 +85,7 @@ export const Hero = () => {
               <Button 
                 size="lg"
                 onClick={() => window.location.href = '/book-meeting'}
-                className="group relative w-full sm:w-auto text-sm sm:text-base md:text-lg px-8 sm:px-10 md:px-12 py-5 sm:py-6 md:py-7 h-auto font-bold bg-gradient-to-br from-[hsl(270,80%,65%)] via-[hsl(260,85%,60%)] to-[hsl(220,90%,60%)] text-white hover:from-[hsl(270,85%,70%)] hover:via-[hsl(260,90%,65%)] hover:to-[hsl(220,95%,65%)] transform hover:scale-[1.06] hover:-translate-y-2 transition-all duration-400 cursor-pointer overflow-hidden rounded-xl border-2 border-transparent hover:border-[hsl(270,80%,75%)]/30 shadow-[0_20px_60px_-15px_rgba(167,139,250,0.6)]"
+                className="group relative w-full sm:w-auto text-sm sm:text-base md:text-lg px-8 sm:px-10 md:px-12 py-5 sm:py-6 md:py-7 h-auto font-bold bg-gradient-to-br from-[hsl(var(--gold))] via-[hsl(var(--brand-blue))] to-[hsl(var(--gold))] text-white hover:opacity-95 transform hover:scale-[1.06] hover:-translate-y-2 transition-all duration-400 cursor-pointer overflow-hidden rounded-xl border-2 border-transparent hover:border-[hsl(var(--gold))]/30 shadow-[0_20px_60px_-15px_hsl(188_80%_40%/0.35)]"
                 aria-label="Book a free 30-minute design consultation"
               >
                 {/* Subtle shimmer effect */}
@@ -104,13 +104,13 @@ export const Hero = () => {
                 />
                 
                 {/* Enhanced hover glow */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-[hsl(270,80%,65%)] via-[hsl(260,85%,60%)] to-[hsl(220,90%,60%)] rounded-xl blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-300" aria-hidden="true" />
+                <div className="absolute -inset-1 bg-gradient-to-r from-[hsl(var(--gold))] via-[hsl(var(--brand-blue))] to-[hsl(var(--gold))] rounded-xl blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-300" aria-hidden="true" />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
                 
                 <span className="relative z-10 flex items-center justify-center gap-2.5">
                   <Calendar className="w-5 h-5 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" aria-hidden="true" />
-                  <span className="hidden sm:inline font-semibold group-hover:tracking-wide transition-all duration-300">Book Design Consultation (30 min)</span>
-                  <span className="sm:hidden font-semibold group-hover:tracking-wide transition-all duration-300">Book Consult</span>
+                  <span className="hidden sm:inline font-semibold group-hover:tracking-wide transition-all duration-300">Book Strategy Call (30 min)</span>
+                  <span className="sm:hidden font-semibold group-hover:tracking-wide transition-all duration-300">Book Call</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300" aria-hidden="true" />
                 </span>
               </Button>
@@ -164,7 +164,7 @@ export const Hero = () => {
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className="bg-gradient-to-br from-[hsl(270,80%,65%)] via-[hsl(260,85%,60%)] to-[hsl(250,70%,55%)] text-white px-3 py-2 sm:px-4 sm:py-2.5 rounded-full shadow-lg border-2 border-background flex items-center gap-1.5 sm:gap-2"
+                className="bg-gradient-to-br from-[hsl(217,91%,65%)] via-[hsl(217,91%,60%)] to-[hsl(217,91%,55%)] text-white px-3 py-2 sm:px-4 sm:py-2.5 rounded-full shadow-lg border-2 border-background flex items-center gap-1.5 sm:gap-2"
               >
                 <Award className="w-3 h-3 sm:w-4 sm:h-4" aria-hidden="true" />
                 <span className="text-[10px] sm:text-xs font-bold whitespace-nowrap">Top Rated</span>
@@ -212,7 +212,7 @@ export const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1 }}
-                className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 md:bottom-6 md:left-6 md:right-6 backdrop-blur-xl bg-gradient-to-br from-[hsl(250,50%,15%)] via-[hsl(250,50%,18%)] to-[hsl(250,50%,20%)] border border-[hsl(270,80%,65%)]/50 rounded-xl p-4 sm:p-5 shadow-2xl"
+                className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 md:bottom-6 md:left-6 md:right-6 backdrop-blur-xl bg-gradient-to-br from-[hsl(220,25%,15%)] via-[hsl(220,25%,18%)] to-[hsl(220,25%,20%)] border border-[hsl(217,91%,65%)]/50 rounded-xl p-4 sm:p-5 shadow-2xl"
                 style={{ transform: "translateZ(80px)" }}
               >
                 <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6">
@@ -227,9 +227,9 @@ export const Hero = () => {
                       animate={{ y: [-3, 3, -3] }}
                       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                     >
-                      <Palette className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-1 text-[hsl(270,80%,75%)] transition-colors" aria-hidden="true" />
+                      <Palette className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-1 text-[hsl(217,91%,75%)] transition-colors" aria-hidden="true" />
                       <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">500+</div>
-                      <div className="text-[9px] sm:text-[10px] md:text-xs text-[hsl(270,80%,85%)] font-medium">Projects Delivered</div>
+                      <div className="text-[9px] sm:text-[10px] md:text-xs text-[hsl(217,91%,85%)] font-medium">Projects Delivered</div>
                     </motion.div>
                   </motion.div>
                   
@@ -244,9 +244,9 @@ export const Hero = () => {
                       animate={{ y: [-3, 3, -3] }}
                       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
                     >
-                      <Layers className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-1 text-[hsl(270,80%,75%)] transition-colors" aria-hidden="true" />
+                      <Layers className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-1 text-[hsl(217,91%,75%)] transition-colors" aria-hidden="true" />
                       <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">3–7 days</div>
-                      <div className="text-[9px] sm:text-[10px] md:text-xs text-[hsl(270,80%,85%)] font-medium">Avg Turnaround</div>
+                      <div className="text-[9px] sm:text-[10px] md:text-xs text-[hsl(217,91%,85%)] font-medium">Avg Turnaround</div>
                     </motion.div>
                   </motion.div>
                   
@@ -261,9 +261,9 @@ export const Hero = () => {
                       animate={{ y: [-3, 3, -3] }}
                       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
                     >
-                      <Award className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-1 text-[hsl(270,80%,75%)] transition-colors" aria-hidden="true" />
+                      <Award className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-1 text-[hsl(217,91%,75%)] transition-colors" aria-hidden="true" />
                       <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">98%</div>
-                      <div className="text-[9px] sm:text-[10px] md:text-xs text-[hsl(270,80%,85%)] font-medium">Client Satisfaction</div>
+                      <div className="text-[9px] sm:text-[10px] md:text-xs text-[hsl(217,91%,85%)] font-medium">Client Satisfaction</div>
                     </motion.div>
                   </motion.div>
                 </div>

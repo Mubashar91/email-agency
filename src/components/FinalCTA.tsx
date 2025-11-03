@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export const FinalCTA = () => {
   return (
     <motion.section 
-      className="relative overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 bg-gradient-to-br from-[hsl(250,50%,16%)] via-[hsl(250,50%,22%)] to-[hsl(250,50%,26%)] z-60"
+      className="relative overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 bg-[image:var(--gradient-dark)] z-60"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-50px" }}
@@ -20,7 +20,7 @@ export const FinalCTA = () => {
             backgroundSize: '36px 36px'
           }} />
           {/* Dark overlay for stronger contrast */}
-        <div className="absolute inset-0 pointer-events-none bg-black/30 dark:bg-black/45" />
+        <div className="absolute inset-0 pointer-events-none bg-black/20 dark:bg-black/30" />
       </div>
         {/* Soft radial vignette */}
         <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-70 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.06)_30%,transparent_65%)]" />
@@ -28,7 +28,7 @@ export const FinalCTA = () => {
         <div className="absolute inset-0 pointer-events-none opacity-10 bg-[repeating-linear-gradient(45deg,rgba(255,255,255,0.08)_0px,rgba(255,255,255,0.08)_2px,transparent_2px,transparent_8px)]" />
         {/* Animated gradient orbs */}
         <motion.div 
-          className="absolute -top-20 -right-20 w-40 h-40 xs:w-48 xs:h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-[hsl(270,80%,65%)]/20 rounded-full mix-blend-overlay filter blur-3xl"
+          className="absolute -top-20 -right-20 w-40 h-40 xs:w-48 xs:h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-[hsl(217,91%,65%)]/20 rounded-full mix-blend-overlay filter blur-3xl"
           animate={{ 
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3]
@@ -91,8 +91,8 @@ export const FinalCTA = () => {
               >
                 <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
               </motion.div>
-              <span className="whitespace-nowrap">Start Your Data Entry Today</span>
-              <div className="w-1.5 h-1.5 xs:w-2 xs:h-2 rounded-full bg-[hsl(270,80%,65%)] animate-pulse"></div>
+              <span className="whitespace-nowrap">Launch High‑ROI Campaigns</span>
+              <div className="w-1.5 h-1.5 xs:w-2 xs:h-2 rounded-full bg-[hsl(var(--gold))] animate-pulse"></div>
             </div>
           </motion.div>
 
@@ -104,10 +104,10 @@ export const FinalCTA = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            <span className="block drop-shadow-lg">Ready for Clean,</span>
+            <span className="block drop-shadow-lg">Ready to Scale</span>
             <span className="relative inline-block mt-2 sm:mt-3">
               <span className="relative z-10 bg-gradient-to-r from-white via-white/70 to-white bg-clip-text text-transparent drop-shadow-2xl">
-                Accurate Data?
+                Profitable Ads?
               </span>
               <motion.span 
                 className="absolute bottom-2 sm:bottom-3 left-0 w-full h-4 sm:h-5 bg-white/30 -z-0 rounded-full blur-sm"
@@ -118,155 +118,53 @@ export const FinalCTA = () => {
             </span>
           </motion.h2>
           
-          {/* Subtitle with benefits */}
+          {/* One-liner */}
           <motion.div
-            className="mb-10 sm:mb-12 md:mb-16 max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 15 }}
+            className="mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
           >
-            <p className="text-xl sm:text-2xl md:text-3xl text-white/95 mb-8 leading-relaxed font-semibold drop-shadow-md">
-              Get spreadsheet‑style data delivered in 24–72 hours
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed">
+              Launch and scale cross‑channel ads with creative testing, robust tracking, and weekly optimization.
             </p>
-            
-            {/* Benefits list */}
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-5 mt-8">
-              {[
-                "Free sample included",
-                "Template & field mapping",
-                "99.9% accuracy QA",
-                "24–72h turnaround"
-              ].map((benefit, index) => (
-                <motion.div
-                  key={benefit}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.4 + index * 0.1 }}
-                  className="flex items-center gap-2 bg-white/15 backdrop-blur-md rounded-full px-4 sm:px-5 py-2 sm:py-2.5 border border-white/30 hover:bg-white/25 hover:scale-105 transition-all duration-300 shadow-lg"
-                >
-                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-white flex-shrink-0" />
-                  <span className="text-white text-sm sm:text-base font-semibold whitespace-nowrap">{benefit}</span>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
           
-          {/* Enhanced CTA buttons */}
+          {/* Single CTA */}
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center mb-12 sm:mb-16"
-            initial={{ opacity: 0, y: 15 }}
+            className="flex justify-center mb-10 sm:mb-12"
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
           >
             <Button 
               size="lg"
               onClick={() => window.location.href = '/book-meeting'}
-              className="bg-gradient-to-r from-[hsl(270,80%,65%)] to-[hsl(220,90%,60%)] text-white hover:from-[hsl(270,85%,70%)] hover:to-[hsl(220,95%,65%)] hover:scale-[1.08] active:scale-[1.02] group px-8 sm:px-12 py-6 sm:py-8 text-base sm:text-lg font-extrabold rounded-2xl shadow-[0_20px_60px_-15px_hsl(270,80%,65%/0.35)] hover:shadow-[0_30px_80px_-15px_hsl(270,80%,65%/0.45)] transition-all duration-300 border-0 relative overflow-hidden cursor-pointer w-full sm:w-auto"
+              className="bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] text-white hover:opacity-95 group px-8 sm:px-10 py-5 sm:py-6 text-base sm:text-lg font-bold rounded-2xl shadow-[0_20px_60px_-15px_hsl(217_91%_60%/0.35)] transition-all duration-300 border-0 relative overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12 transform translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 animate-pulse" />
-              <span className="relative flex items-center gap-3">
-                <span>Get Free Sample</span>
-                <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-2 transition-transform duration-300" />
-              </span>
-            </Button>
-            
-            <Button 
-              variant="outline"
-              size="lg"
-              onClick={() => window.open('https://wa.me/YOUR_WHATSAPP_NUMBER', '_blank')}
-              className="bg-white/10 border border-white/40 text-white hover:bg-white/20 hover:text-white hover:scale-[1.08] active:scale-[1.02] px-6 sm:px-10 py-6 sm:py-8 text-base sm:text-lg font-bold rounded-2xl backdrop-blur-lg transition-all duration-300 group relative overflow-hidden cursor-pointer w-full sm:w-auto shadow-lg hover:shadow-2xl"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <span className="relative flex items-center gap-3">
-                <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 text-[hsl(270,80%,75%)] group-hover:rotate-12 transition-transform duration-300" />
-                <span>Quick WhatsApp Chat</span>
+              <span className="relative flex items-center gap-2">
+                <span>Start Free Audit</span>
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-1.5 transition-transform duration-300" />
               </span>
             </Button>
           </motion.div>
 
-          {/* Stats Section */}
-          <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.35 }}
-          >
-            {[
-              { icon: FileText, value: "5M+", label: "Projects Delivered" },
-              { icon: CheckCircle2, value: "98%", label: "Client Satisfaction" },
-              { icon: Clock, value: "3–7d", label: "Avg. Turnaround" },
-              { icon: Award, value: "50+", label: "Awards/Nominations" }
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.4 + index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-white/15 backdrop-blur-lg border border-white/30 rounded-2xl p-4 sm:p-6 hover:bg-white/25 transition-all duration-300 group"
-              >
-                <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-[hsl(270,80%,75%)] mb-2 mx-auto group-hover:scale-110 transition-transform duration-300" />
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">{stat.value}</div>
-                <div className="text-xs sm:text-sm text-white/80">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
+          {/* (condensed) removed stats */}
+          <></>
 
-          {/* Enhanced trust indicators */}
-          <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-          >
-            <div className="flex items-center justify-center gap-3 text-white/90 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300">
-              <div className="p-2 bg-[hsl(270,80%,65%)]/20 rounded-lg">
-                <Clock className="w-5 h-5 text-[hsl(270,80%,75%)] flex-shrink-0" />
-              </div>
-              <div className="text-left">
-                <div className="font-bold text-white text-base">15 min</div>
-                <div className="text-sm text-white/80">Free consultation</div>
-              </div>
-            </div>
-            
-            <div className="flex items-center justify-center gap-3 text-white/90 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300">
-              <div className="p-2 bg-[hsl(220,90%,60%)]/20 rounded-lg relative">
-                <div className="w-5 h-5 rounded-full bg-[hsl(220,90%,60%)] animate-pulse" />
-                <div className="absolute inset-0 rounded-full bg-[hsl(220,90%,60%)] animate-ping opacity-75" />
-              </div>
-              <div className="text-left">
-                <div className="font-bold text-white text-base">2 hours</div>
-                <div className="text-sm text-white/80">Avg. response time</div>
-              </div>
-            </div>
-            
-            <div className="flex items-center justify-center gap-3 text-white/90 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300">
-              <div className="p-2 bg-[hsl(270,80%,65%)]/20 rounded-lg">
-                <CheckCircle2 className="w-5 h-5 text-[hsl(270,80%,75%)] flex-shrink-0" />
-              </div>
-              <div className="text-left">
-                <div className="font-bold text-white text-base">No commitment</div>
-                <div className="text-sm text-white/80">Zero pressure</div>
-              </div>
-            </div>
-          </motion.div>
+          {/* (condensed) removed trust indicators */}
+          <></>
 
-          {/* Additional reassurance text */}
+          {/* Small reassurance */}
           <motion.p 
-            className="mt-8 sm:mt-10 text-white/80 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-medium"
+            className="mt-6 text-white/80 text-sm max-w-xl mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
           >
-            <span className="flex items-center justify-center gap-2 flex-wrap">
-              <CheckCircle2 className="w-4 h-4 text-[hsl(270,80%,75%)]" />
-              Join 500+ teams shipping clean datasets with our proven data entry workflows
-            </span>
+            Join 300+ teams scaling with data‑driven ad playbooks.
           </motion.p>
         </motion.div>
       </div>

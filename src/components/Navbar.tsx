@@ -71,7 +71,7 @@ export const Navbar = () => {
             className="flex items-center space-x-2 sm:space-x-3"
           >
             <motion.div 
-              className="w-8 h-8 sm:w-9 sm:h-9 md:w-9 md:h-9 lg:w-10 lg:h-10 bg-gradient-to-br from-[hsl(270,80%,65%)] to-[hsl(220,90%,60%)] rounded-lg flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300"
+              className="w-8 h-8 sm:w-9 sm:h-9 md:w-9 md:h-9 lg:w-10 lg:h-10 bg-gradient-to-br from-[hsl(217,91%,65%)] to-[hsl(220,90%,60%)] rounded-lg flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300"
               whileHover={{ 
                 scale: 1.1, 
                 rotate: 5,
@@ -82,10 +82,10 @@ export const Navbar = () => {
               <span className="text-white font-bold text-base sm:text-lg md:text-lg lg:text-xl">D</span>
             </motion.div>
             <motion.span 
-              className="text-lg sm:text-xl md:text-xl lg:text-2xl font-bold bg-gradient-to-r from-[hsl(270,80%,65%)] to-[hsl(220,90%,60%)] bg-clip-text text-transparent hover:opacity-80 transition-opacity duration-300"
+              className="text-lg sm:text-xl md:text-xl lg:text-2xl font-bold bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent hover:opacity-80 transition-opacity duration-300"
               whileHover={{ scale: 1.05 }}
             >
-              DesignHub
+              AdBoost
             </motion.span>
           </motion.div>
 
@@ -98,10 +98,10 @@ export const Navbar = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                className="relative text-[hsl(250,50%,20%)] dark:text-foreground hover:text-[hsl(270,80%,65%)] dark:hover:text-gold transition-all duration-300 font-medium text-sm md:text-sm lg:text-base px-2 md:px-2.5 lg:px-3 py-2 rounded-lg hover:bg-[hsl(250,100%,98%)] dark:hover:bg-gold/10 group whitespace-nowrap"
+                className="relative text-[hsl(250,50%,20%)] dark:text-foreground hover:text-[hsl(217,91%,65%)] dark:hover:text-gold transition-all duration-300 font-medium text-sm md:text-sm lg:text-base px-2 md:px-2.5 lg:px-3 py-2 rounded-lg hover:bg-[hsl(250,100%,98%)] dark:hover:bg-gold/10 group whitespace-nowrap"
               >
                 {item.name}
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[hsl(270,80%,65%)] to-[hsl(220,90%,60%)] group-hover:w-3/4 transition-all duration-300" />
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[hsl(217,91%,65%)] to-[hsl(220,90%,60%)] group-hover:w-3/4 transition-all duration-300" />
               </motion.a>
             ))}
           </div>
@@ -134,9 +134,9 @@ export const Navbar = () => {
                 variant="gold"
                 size="sm"
                 onClick={() => window.location.href = '/book-meeting'}
-                className="text-sm md:text-sm lg:text-base px-4 md:px-4 lg:px-7 py-2 md:py-2 lg:py-2.5 cursor-pointer bg-gradient-to-r from-[hsl(270,80%,65%)] to-[hsl(220,90%,60%)] hover:from-[hsl(270,85%,70%)] hover:to-[hsl(220,95%,65%)] text-white border-0 hover:shadow-lg hover:shadow-[hsl(270,80%,65%)]/30 transition-all duration-300 hover:scale-105 font-semibold whitespace-nowrap"
+                className="text-sm md:text-sm lg:text-base px-4 md:px-4 lg:px-7 py-2 md:py-2 lg:py-2.5 cursor-pointer bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] hover:opacity-95 text-white border-0 hover:shadow-lg hover:shadow-[hsl(var(--gold))]/30 transition-all duration-300 hover:scale-105 font-semibold whitespace-nowrap"
               >
-                Start Project
+                Book Strategy Call
               </Button>
             </motion.div>
           </div>
@@ -199,7 +199,7 @@ export const Navbar = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.2, delay: index * 0.05 }}
-                    className="block text-foreground hover:text-[hsl(270,80%,65%)] hover:bg-[hsl(270,80%,65%)]/10 active:bg-[hsl(270,80%,65%)]/20 transition-all duration-200 font-medium py-3 px-4 rounded-lg mx-2"
+                    className="block text-foreground hover:text-[hsl(217,91%,65%)] hover:bg-[hsl(217,91%,65%)]/10 active:bg-[hsl(217,91%,65%)]/20 transition-all duration-200 font-medium py-3 px-4 rounded-lg mx-2"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
@@ -214,9 +214,9 @@ export const Navbar = () => {
                   <Button
                     variant="gold"
                     onClick={() => window.location.href = '/book-meeting'}
-                    className="w-full text-base py-3 cursor-pointer font-semibold bg-gradient-to-r from-[hsl(270,80%,65%)] to-[hsl(220,90%,60%)] hover:from-[hsl(270,85%,70%)] hover:to-[hsl(220,95%,65%)] text-white border-0 hover:shadow-lg transition-all duration-300"
+                    className="w-full text-base py-3 cursor-pointer font-semibold bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] hover:opacity-95 text-white border-0 hover:shadow-lg transition-all duration-300"
                   >
-                    Start Project
+                    Book Strategy Call
                   </Button>
                 </motion.div>
               </div>

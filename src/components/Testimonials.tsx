@@ -7,21 +7,21 @@ const testimonials = [
     name: "Emma Rodriguez",
     company: "Luxe Beauty Co.",
     role: "Founder",
-    content: "Our rebrand feels premium and consistent across web, packaging, and socials. The guidelines make every new asset easy to produce.",
+    content: "We scaled Meta + Google without sacrificing ROAS. The weekly creative tests and budget guardrails made growth predictable.",
     rating: 5
   },
   {
     name: "David Chen",
-    company: "Peak Performance Coaching",
+    company: "Peak Performance",
     role: "CEO",
-    content: "The UI/UX refresh boosted conversions and made mobile actually delightful. We’re getting more qualified inquiries every week.",
+    content: "LinkedIn + Search finally drove qualified SQLs at a lower blended CAC. Reporting was clear and actionable.",
     rating: 5
   },
   {
     name: "Sophie Martens",
     company: "Urban Eats",
     role: "Marketing Lead",
-    content: "Motion templates and a social kit 3×'d our output. Everything looks on‑brand—and it performs.",
+    content: "TikTok + Snapchat added real incremental orders. Creative iterations each week kept CPA trending down.",
     rating: 5
   }
 ];
@@ -44,11 +44,11 @@ export const Testimonials = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-2 text-[hsl(250,50%,20%)] dark:text-foreground">
-            Trusted by <span className="bg-gradient-to-r from-[hsl(270,80%,65%)] to-[hsl(220,90%,60%)] bg-clip-text text-transparent">Brands That Create</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-2 text-[hsl(222,47%,11%)] dark:text-foreground">
+            Trusted for <span className="bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">Ad Performance</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl px-2">
-            Real design outcomes—premium branding, conversion‑focused UI/UX, and scroll‑stopping content.
+            Real results—lower CPA, higher ROAS, and faster learning loops across Google, Meta, TikTok, Snapchat, LinkedIn, and X.
           </p>
         </motion.div>
 
@@ -56,7 +56,7 @@ export const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <motion.div 
               key={index}
-              className="bg-[hsl(250,100%,98%)] dark:bg-gradient-to-br dark:from-[hsl(250,50%,15%)] dark:via-[hsl(250,50%,18%)] dark:to-[hsl(250,50%,20%)] border-2 border-[hsl(250,40%,92%)] dark:border-[hsl(250,30%,35%)]/50 rounded-lg sm:rounded-xl p-5 sm:p-6 md:p-8 hover:border-[hsl(270,80%,65%)] dark:hover:border-[hsl(270,80%,65%)] hover:shadow-[0_20px_60px_-15px_rgba(167,139,250,0.25)] dark:hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] transition-all duration-300"
+              className="bg-card border-2 border-[hsl(215,32%,91%)] dark:border-[hsl(250,30%,35%)]/50 rounded-lg sm:rounded-xl p-5 sm:p-6 md:p-8 hover:border-[hsl(var(--gold))] dark:hover:border-[hsl(var(--gold))] hover:shadow-[0_20px_60px_-15px_hsl(217_91%_60%/0.25)] dark:hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] transition-all duration-300"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -68,37 +68,37 @@ export const Testimonials = () => {
                 ))}
               </div>
               
-              <p className="text-sm sm:text-base text-card-foreground dark:text-[hsl(270,80%,85%)] mb-4 sm:mb-5 md:mb-6 leading-relaxed">
+              <p className="text-sm sm:text-base text-card-foreground dark:text-white mb-4 sm:mb-5 md:mb-6 leading-relaxed">
                 "{testimonial.content}"
               </p>
               
-              <div className="border-t border-[hsl(250,40%,92%)] dark:border-[hsl(250,30%,35%)]/50 pt-3 sm:pt-4">
-                <p className="text-sm sm:text-base font-bold text-[hsl(250,50%,20%)] dark:text-white">{testimonial.name}</p>
-                <p className="text-xs sm:text-sm text-[hsl(270,80%,65%)] dark:text-[hsl(270,80%,75%)]">{testimonial.role}</p>
-                <p className="text-xs sm:text-sm text-[hsl(220,90%,60%)] dark:text-[hsl(270,80%,85%)]">{testimonial.company}</p>
+              <div className="border-t border-[hsl(220,40%,92%)] dark:border-border/50 pt-3 sm:pt-4">
+                <p className="text-sm sm:text-base font-bold text-[hsl(222,47%,20%)] dark:text-white">{testimonial.name}</p>
+                <p className="text-xs sm:text-sm text-[hsl(217,91%,65%)] dark:text-[hsl(217,91%,75%)]">{testimonial.role}</p>
+                <p className="text-xs sm:text-sm text-[hsl(220,90%,60%)] dark:text-white">{testimonial.company}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
         <motion.div 
-          className="bg-[hsl(250,100%,98%)] dark:bg-gradient-to-br dark:from-[hsl(250,50%,15%)] dark:via-[hsl(250,50%,18%)] dark:to-[hsl(250,50%,20%)] border-2 border-[hsl(250,40%,92%)] dark:border-[hsl(250,30%,35%)]/50 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 max-w-5xl mx-auto hover:border-[hsl(270,80%,65%)] dark:hover:border-[hsl(270,80%,65%)] hover:shadow-[0_20px_60px_-15px_rgba(167,139,250,0.25)] dark:hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] transition-all duration-300"
+          className="bg-card border-2 border-[hsl(215,32%,91%)] dark:border-[hsl(250,30%,35%)]/50 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 max-w-5xl mx-auto hover:border-[hsl(var(--gold))] dark:hover:border-[hsl(var(--gold))] hover:shadow-[0_20px_60px_-15px_hsl(217_91%_60%/0.25)] dark:hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] transition-all duration-300"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
         >
           <div className="text-left">
-            <span className="inline-block px-3 py-1 bg-[hsl(250,100%,98%)] dark:bg-[hsl(250,45%,20%)]/50 text-[hsl(270,80%,65%)] dark:text-[hsl(270,80%,75%)] text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
+            <span className="inline-block px-3 py-1 bg-card dark:bg-[hsl(250,45%,20%)]/50 text-[hsl(var(--gold))] dark:text-[hsl(var(--gold))] text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
               Success Story
             </span>
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-[hsl(250,50%,20%)] dark:text-white">
-              Case Study: <span className="bg-gradient-to-r from-[hsl(270,80%,65%)] to-[hsl(220,90%,60%)] bg-clip-text text-transparent">450% Organic Traffic Growth in 6 Months</span>
+              Case Study: <span className="bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">3.4x ROAS Scaling Across Channels</span>
             </h3>
-            <p className="text-sm sm:text-base md:text-lg text-[hsl(250,30%,50%)] dark:text-[hsl(270,80%,85%)] mb-5 sm:mb-6 leading-relaxed max-w-3xl">
-              See how an e-commerce store went from 2K to 11K monthly organic visitors and turned SEO into their #1 revenue channel.
+            <p className="text-sm sm:text-base md:text-lg text-[hsl(220,30%,50%)] dark:text-white mb-5 sm:mb-6 leading-relaxed max-w-3xl">
+              See how we combined PMAX + Meta creative testing to scale budget while improving CPA—validated in GA4.
             </p>
-            <Button size="lg" className="w-full sm:w-auto text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[hsl(270,80%,65%)] to-[hsl(220,90%,60%)] text-white hover:from-[hsl(270,85%,70%)] hover:to-[hsl(220,95%,65%)] transition-all duration-300 hover:scale-105 font-semibold border-0">
+            <Button size="lg" className="w-full sm:w-auto text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] text-white hover:opacity-95 transition-all duration-300 hover:scale-105 font-semibold border-0">
               View Full Case Study
             </Button>
           </div>
