@@ -110,15 +110,43 @@ export const Pricing = () => {
             <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-50"></span>
             <span className="relative z-10">Transparent Pricing</span>
           </motion.span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 text-[hsl(222,47%,20%)] dark:text-white leading-tight tracking-tight">
-            Ad Campaign <span className="relative inline-block">
-              <span className="bg-gradient-to-r from-[hsl(var(--gold))] via-[hsl(var(--brand-blue))] to-[hsl(var(--gold))] bg-clip-text text-transparent bg-[length:200%_100%]">Packages</span>
-              <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[hsl(var(--gold))]/40 to-transparent"></span>
-            </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 text-foreground leading-tight tracking-tight">
+            Ad Campaign <span className="text-primary">Packages</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
             Choose a plan that fits your channels and goals. Scale budgets only when unit economics hold. No hidden fees.
           </p>
+        </motion.div>
+
+        {/* 15-Minute Free Call Banner */}
+        <motion.div
+          className="mb-8 sm:mb-10 md:mb-12 max-w-5xl mx-auto"
+          initial={{ opacity: 0, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.25 }}
+        >
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] p-[2px] shadow-[0_16px_40px_-12px_rgba(59,130,246,0.35)]">
+            <div className="relative rounded-2xl p-6 sm:p-8 bg-card/95 dark:bg-background/90 backdrop-blur-xl">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
+                <div className="text-center sm:text-left">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-1 text-foreground dark:text-white">
+                    Free 15‑Minute Strategy Call
+                  </h3>
+                  <p className="text-sm sm:text-base text-muted-foreground dark:text-white/90">
+                    Get quick advice on channels, creatives, and tracking before choosing a plan.
+                  </p>
+                </div>
+                <Button 
+                  size="lg"
+                  className="flex-shrink-0 bg-[hsl(var(--brand-blue))] text-white hover:opacity-90 transition-all duration-300 hover:scale-105 font-semibold shadow-lg px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base border-0"
+                  onClick={() => window.location.href = '/book-meeting'}
+                >
+                  Book Free Call
+                </Button>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         {/* Free Trial Banner */}
@@ -145,12 +173,12 @@ export const Pricing = () => {
                     <Gift className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                   </motion.div>
                   <div>
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[hsl(222,47%,20%)] dark:text-white mb-2">
-                      One Week Free Trial
-                    </h3>
-                    <p className="text-sm sm:text-base text-muted-foreground">
-                      New customers get <span className="font-bold text-[hsl(217,91%,60%)] dark:text-[hsl(217,91%,75%)]">7 days free</span> on any plan. No credit card required.
-                    </p>
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 text-foreground">
+                    One Week Free Trial
+                  </h3>
+                  <p className="text-sm sm:text-base text-muted-foreground">
+                    New customers get <span className="font-bold text-primary">7 days free</span> on any plan. No credit card required.
+                  </p>
                   </div>
                 </div>
                 <Button 
@@ -201,7 +229,7 @@ export const Pricing = () => {
                 />
               )}
               
-              <div className={`relative rounded-2xl p-6 sm:p-8 md:p-10 transition-all duration-500 group h-full bg-card/80 backdrop-blur-xl text-[hsl(222,47%,20%)] dark:text-white border-2 border-[hsl(215,32%,91%)] dark:border-border/30 hover:border-[hsl(var(--gold))] dark:hover:border-[hsl(var(--gold))] hover:shadow-[0_25px_70px_-15px_hsl(217_91%_60%/0.35),0_0_40px_hsl(217_91%_60%/0.15)] dark:hover:shadow-[0_25px_70px_-15px_rgba(59,130,246,0.3),0_0_40px_rgba(59,130,246,0.1)] hover:scale-[1.02]`}>
+              <div className={`relative rounded-2xl p-6 sm:p-8 md:p-10 transition-all duration-500 group h-full bg-card/80 backdrop-blur-xl text-foreground dark:text-white border-2 border-[hsl(215,32%,91%)] dark:border-border/30 hover:border-[hsl(var(--gold))] dark:hover:border-[hsl(var(--gold))] hover:shadow-[0_25px_70px_-15px_hsl(217_91%_60%/0.35),0_0_40px_hsl(217_91%_60%/0.15)] dark:hover:shadow-[0_25px_70px_-15px_rgba(59,130,246,0.3),0_0_40px_rgba(59,130,246,0.1)] hover:scale-[1.02]`}>
                 {/* Top accent line with animation */}
                 <motion.div 
                   className={`absolute top-0 left-0 right-0 h-1 rounded-t-2xl ${
@@ -232,14 +260,14 @@ export const Pricing = () => {
               
                 {/* Header */}
                 <div className="mb-6 relative z-10">
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-2 group-hover:scale-105 transition-transform duration-300 text-[hsl(222,47%,20%)] dark:text-white">
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-2 group-hover:scale-105 transition-transform duration-300 text-foreground dark:text-white">
                     {plan.name}
                   </h3>
                   <div className="flex items-center gap-2">
                     <p className="text-sm font-medium text-[hsl(var(--gold))] dark:text-[hsl(var(--gold))]">
                       {plan.hours}
                     </p>
-                    <span className="px-2 py-0.5 text-xs rounded-full bg-card dark:bg-[hsl(250,45%,20%)]/50 text-[hsl(222,47%,20%)] dark:text-white">
+                    <span className="px-2 py-0.5 text-xs rounded-full bg-card dark:bg-[hsl(250,45%,20%)]/50 text-foreground dark:text-white">
                       Ad Campaigns
                     </span>
                   </div>
@@ -249,7 +277,7 @@ export const Pricing = () => {
                 <div className="mb-6 pb-6 border-b border-current/10 relative z-10">
                   <div className="flex items-baseline gap-1">
                     <motion.span 
-                      className="text-5xl sm:text-6xl font-bold tracking-tight text-[hsl(222,47%,20%)] dark:text-white"
+                      className="text-5xl sm:text-6xl font-bold tracking-tight text-foreground dark:text-white"
                       initial={{ scale: 0.5, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
                       transition={{ type: "spring", duration: 0.8, delay: 0.4 }}
@@ -265,8 +293,8 @@ export const Pricing = () => {
                       + ${plan.setupFee} setup fee
                     </p>
                   ) : (
-                    <p className="text-xs mt-2 font-semibold flex items-center gap-1 text-[hsl(222,47%,20%)] dark:text-white">
-                      <Check className="w-3.5 h-3.5 text-[hsl(222,47%,20%)] dark:text-white" />
+                    <p className="text-xs mt-2 font-semibold flex items-center gap-1 text-foreground dark:text-white">
+                      <Check className="w-3.5 h-3.5 text-foreground dark:text-white" />
                       No setup fee
                     </p>
                   )}

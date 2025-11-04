@@ -37,7 +37,7 @@ const reasons = [
 export const WhyChooseUs = () => {
   return (
     <motion.section 
-      className="relative py-8 sm:py-10 md:py-12 lg:py-14 bg-gradient-to-b from-background via-muted/30 to-background z-40"
+      className="relative py-8 sm:py-10 md:py-12 lg:py-14 bg-gradient-to-b from-background via-muted/10 to-background z-40"
       initial={{ opacity: 0, y: 200 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
@@ -54,10 +54,10 @@ export const WhyChooseUs = () => {
           <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-br from-green-600 via-green-700 to-green-800 text-white text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
             The DON VA Difference
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6 text-foreground px-2">
-            Why Choose <span className="bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">DON VA</span>?
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6 text-foreground dark:text-white leading-tight tracking-tight px-2">
+            Why Choose <span className="text-primary">DON VA</span>?
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed px-2">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed dark:text-white/90 px-2">
             Not all virtual assistant services are created equal. Here's what sets us apart from the rest.
           </p>
         </motion.div>
@@ -84,10 +84,10 @@ export const WhyChooseUs = () => {
                 >
                   <reason.icon className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10" />
                 </motion.div>
-                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white transition-colors duration-300">
+                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-foreground dark:text-white transition-colors duration-300">
                   {reason.title}
                 </h3>
-                <p className="text-sm sm:text-base text-green-100 leading-relaxed">
+                <p className="text-sm sm:text-base text-green-100 leading-relaxed dark:text-white/90">
                   {reason.description}
                 </p>
               </div>

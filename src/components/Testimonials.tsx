@@ -44,13 +44,10 @@ export const Testimonials = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 text-[hsl(222,47%,20%)] dark:text-white leading-tight tracking-tight px-2">
-            Real Results from <span className="relative inline-block">
-              <span className="bg-gradient-to-r from-[hsl(var(--gold))] via-[hsl(var(--brand-blue))] to-[hsl(var(--gold))] bg-clip-text text-transparent bg-[length:200%_100%]">Growth Teams</span>
-              <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[hsl(var(--gold))]/40 to-transparent"></span>
-            </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-foreground dark:text-white leading-tight tracking-tight px-2">
+            Real Results from <span className="text-primary">Growth Teams</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl px-2">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl px-2 dark:text-white/90">
             Real results—lower CPA, higher ROAS, and faster learning loops across Google, Meta, TikTok, Snapchat, LinkedIn, and X.
           </p>
         </motion.div>
@@ -94,14 +91,14 @@ export const Testimonials = () => {
                 ))}
               </div>
               
-              <p className="text-sm sm:text-base text-card-foreground dark:text-white mb-4 sm:mb-5 md:mb-6 leading-relaxed">
+              <p className="text-sm sm:text-base text-foreground mb-4 sm:mb-5 md:mb-6 leading-relaxed dark:text-white/90">
                 "{testimonial.content}"
               </p>
               
               <div className="border-t border-[hsl(220,40%,92%)] dark:border-border/50 pt-3 sm:pt-4">
-                <p className="text-sm sm:text-base font-bold text-[hsl(222,47%,20%)] dark:text-white">{testimonial.name}</p>
-                <p className="text-xs sm:text-sm text-[hsl(217,91%,65%)] dark:text-[hsl(217,91%,75%)]">{testimonial.role}</p>
-                <p className="text-xs sm:text-sm text-[hsl(220,90%,60%)] dark:text-white">{testimonial.company}</p>
+                <p className="text-sm sm:text-base font-bold text-foreground">{testimonial.name}</p>
+                <p className="text-xs sm:text-sm text-muted-foreground">{testimonial.role}</p>
+                <p className="text-xs sm:text-sm text-muted-foreground">{testimonial.company}</p>
               </div>
             </motion.div>
           ))}
@@ -118,10 +115,10 @@ export const Testimonials = () => {
             <span className="inline-block px-3 py-1 bg-card dark:bg-[hsl(250,45%,20%)]/50 text-[hsl(var(--gold))] dark:text-[hsl(var(--gold))] text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
               Success Story
             </span>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-[hsl(250,50%,20%)] dark:text-white">
-              Case Study: <span className="bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">3.4x ROAS Scaling Across Channels</span>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-foreground">
+              Case Study: <span className="text-primary">3.4x ROAS Scaling Across Channels</span>
             </h3>
-            <p className="text-sm sm:text-base md:text-lg text-[hsl(220,30%,50%)] dark:text-white mb-5 sm:mb-6 leading-relaxed max-w-3xl">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-5 sm:mb-6 leading-relaxed max-w-3xl">
               See how we combined PMAX + Meta creative testing to scale budget while improving CPA—validated in GA4.
             </p>
             <Button size="lg" className="w-full sm:w-auto text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] text-white hover:opacity-95 transition-all duration-300 hover:scale-105 font-semibold border-0">

@@ -14,52 +14,49 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Light Mode - Modern Clean */
-    --background: 0 0% 100%; /* Pure white modern background */
-    --foreground: 222 47% 15%; /* Deeper text for better contrast */
+    /* Light Mode - Blueish & Pinkish Theme */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
 
-    --card: 210 40% 99%; /* Subtle off-white cards */
-    --card-foreground: 222 47% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 15%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 217 91% 60%; /* #3B82F6 accent */
+    --primary: 217 91% 60%; /* Professional blue */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 20% 45%; /* #475569 secondary text-ish for chips */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 210 80% 60%; /* Blue secondary */
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 40% 97%; /* modern soft backgrounds */
-    --muted-foreground: 215 20% 40%; /* refined muted text */
+    --muted: 210 12% 95%;
+    --muted-foreground: 210 10% 45%;
 
-    --accent: 217 91% 60%; /* same as primary */
-    --accent-foreground: 0 0% 100%;
+    --accent: 210 80% 60%; /* Blue accent */
+    --accent-foreground: 222 47% 11%;
 
-    --hover: 221 83% 53%; /* #2563EB */
-    --hover-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
 
-    --destructive: 0 84% 63%; /* #EF4444 */
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 220 20% 92%; /* modern subtle borders */
-    --input: 210 40% 98%; /* clean input backgrounds */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
     --ring: 217 91% 60%;
 
     --radius: 0.5rem;
 
-    /* Custom tokens mapped to user palette */
-    --gold: 217 91% 60%;      /* Use as primary accent BLUE (#3B82F6) */
-    --gold-dark: 221 83% 53%; /* Accent hover BLUE (#2563EB) */
-    --gold-light: 217 92% 75%; /* Lighter blue (#60A5FA) */
-    --brand-blue: 187 92% 47%; /* Cyan (#06B6D4) for gradients */
+    /* Custom tokens for blueish theme */
+    --gold: 217 91% 60%; /* Blue as primary */
+    --gold-dark: 221 83% 53%; /* Darker blue */
+    --gold-light: 217 92% 75%; /* Lighter blue */
+    --brand-blue: 210 80% 60%; /* Blue as secondary */
 
-    /* Gradients - Modern vibrant */
-    --gradient-gold: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(187 92% 47%) 100%); /* blue -> cyan */
-    --gradient-dark: linear-gradient(180deg, hsl(215 28% 17%) 0%, hsl(215 25% 21%) 100%);
-    --gradient-light: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 40% 99%) 100%);
+    /* Simple Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(210 80% 60%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(222, 47%, 11%) 0%, hsl(222, 47%, 15%) 100%);
+    --gradient-light: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
 
-    /* Shadows */
+    /* Simple Shadows */
     --shadow-gold: 0 10px 40px -10px hsl(217 91% 60% / 0.25);
     --shadow-gold-lg: 0 25px 80px -20px hsl(217 91% 60% / 0.35);
     --shadow-elegant: 0 20px 60px -15px hsl(215 25% 21% / 0.3);
@@ -73,69 +70,72 @@ All colors MUST be HSL.
     --transition-butter: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     --transition-premium: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 
-    --sidebar-background: 210 40% 99%;
-    --sidebar-foreground: 222 47% 15%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
     --sidebar-primary: 217 91% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 40% 97%;
-    --sidebar-accent-foreground: 222 47% 15%;
-    --sidebar-border: 220 20% 92%;
+    --sidebar-accent: 210 80% 90%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214.3 31.8% 91.4%;
     --sidebar-ring: 217 91% 60%;
 
     /* Typographic + layout tokens */
-    --heading-color: 222 47% 12%; /* Deep modern headings */
+    --heading-color: 222 47% 12%;
     --heading-size: 1.5rem;
     --side-padding: 1.5rem;
   }
 
   .dark {
-    /* Dark Mode per user palette */
-    --background: 222 47% 14%; /* slightly brighter for improved readability */
-    --foreground: 0 0% 100%; /* pure white text for maximum brightness */
+    /* Dark Mode - Blueish & Pinkish Theme */
+    --background: 330 15% 12%;
+    --foreground: 0 0% 98%;
 
-    --card: 222 47% 24%; /* brighter surface */
-    --card-foreground: 0 0% 100%; /* pure white text on cards */
+    --card: 330 15% 14%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222 47% 22%;
-    --popover-foreground: 0 0% 100%; /* pure white text in popovers */
+    --popover: 330 15% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 217 92% 75%; /* #60A5FA */
-    --primary-foreground: 222 47% 12%;
+    --primary: 217 91% 60%; /* Blue primary */
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 215 20% 80%; /* #CBD5E1 */
-    --secondary-foreground: 222 47% 10%;
+    --secondary: 210 80% 60%; /* Blue secondary */
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 222 30% 20%;
-    --muted-foreground: 0 0% 90%; /* bright muted text */
+    --muted: 210 12% 95%;
+    --muted-foreground: 210 10% 45%;
 
-    --accent: 217 92% 75%;
-    --accent-foreground: 222 47% 12%;
+    --accent: 210 80% 90%; /* Light blue accent */
+    --accent-foreground: 0 0% 98%;
 
-    --hover: 217 91% 60%; /* #3B82F6 */
-    --hover-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
 
-    --destructive: 0 91% 71%; /* #F87171 */
-    --destructive-foreground: 0 0% 100%;
+    --border: 330 15% 25%;
+    --input: 330 15% 25%;
+    --ring: 217 91% 60%;
 
-    --border: 215 25% 27%; /* #334155 */
-    --input: 215 25% 27%;
-    --ring: 217 92% 75%;
-    
-    --sidebar-background: 222 47% 10%;
-    --sidebar-foreground: 0 0% 100%; /* pure white sidebar text */
-    --sidebar-primary: 217 92% 75%;
-    --sidebar-primary-foreground: 222 47% 12%;
-    --sidebar-accent: 222 47% 20%;
-    --sidebar-accent-foreground: 0 0% 100%; /* pure white sidebar accent text */
-    --sidebar-border: 215 25% 27%;
-    --sidebar-ring: 217 92% 75%;
+    /* Simple Dark Gradients */
+    --gradient-dark: linear-gradient(180deg, hsl(330, 15%, 12%) 0%, hsl(330, 15%, 15%) 100%);
 
-    --heading-color: 0 0% 100%; /* pure white headings */
-    --brand-blue: 187 92% 47%; /* cyan for gradients */
-    --gold: 217 91% 60%; /* accent blue */
+    /* Simple Shadows for Dark Mode */
+    --shadow-elegant: 0 20px 60px -15px hsl(330 15% 25% / 0.4);
+
+    --sidebar-background: 330 15% 12%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 210 80% 60%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 330 15% 25%;
+    --sidebar-ring: 217 91% 60%;
+
+    --heading-color: 0 0% 98%;
+    --brand-blue: 210 80% 60%; /* Blue as brand accent */
+    --gold: 217 91% 60%; /* Blue as primary */
 
     /* Dark gradient */
-    --gradient-dark: linear-gradient(180deg, hsl(222 47% 14%) 0%, hsl(222 47% 24%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(330, 15%, 12%) 0%, hsl(330, 15%, 15%) 100%);
   }
 }
 
@@ -181,6 +181,15 @@ All colors MUST be HSL.
   /* Enhanced dark mode transitions */
   .dark {
     color-scheme: dark;
+  }
+
+  /* Simple Background Styling */
+  .dark {
+    background: hsl(330, 15%, 12%);
+  }
+
+  .dark body {
+    background: hsl(330, 15%, 12%);
   }
 
   /* Professional button styles */

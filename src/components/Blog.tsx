@@ -157,7 +157,7 @@ export const Blog = () => {
             Performance Insights
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 text-[hsl(222,47%,11%)] dark:text-foreground">
-            Blog & <span className="bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">Ad Playbooks</span>
+            Blog & <span className="bg-gradient-to-r from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">Ad Playbooks</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl leading-relaxed">
             Multi‑platform ad strategies, creative frameworks, tracking setups, and reporting that drive ROAS across Google, Meta, TikTok, Snapchat, LinkedIn, and X.

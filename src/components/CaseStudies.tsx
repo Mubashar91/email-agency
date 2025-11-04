@@ -93,7 +93,7 @@ export const CaseStudies = () => {
   return (
     <motion.section
       id="case-studies"
-      className="relative py-8 sm:py-10 md:py-12 lg:py-14 bg-gradient-to-b from-background via-muted/30 to-background"
+      className="relative py-8 sm:py-10 md:py-12 lg:py-14 bg-gradient-to-b from-background via-muted/10 to-background"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -111,7 +111,7 @@ export const CaseStudies = () => {
           <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-br from-[hsl(var(--gold))] via-[hsl(var(--brand-blue))] to-[hsl(var(--gold))] text-white text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
             Success Stories
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-[hsl(222,47%,11%)] dark:text-foreground">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-foreground dark:text-white">
             Ad Campaign Success Stories
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl leading-relaxed">
@@ -157,7 +157,7 @@ export const CaseStudies = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
-                  <span className="inline-block px-2 sm:px-3 py-0.5 sm:py-1 bg-card dark:bg-[hsl(var(--gold))] text-[hsl(222,47%,20%)] dark:text-white text-xs font-bold rounded-full mb-1.5 sm:mb-2">
+                  <span className="inline-block px-2 sm:px-3 py-0.5 sm:py-1 bg-card dark:bg-[hsl(var(--gold))] text-foreground dark:text-white text-xs font-bold rounded-full mb-1.5 sm:mb-2">
                     {study.industry}
                   </span>
                   <h3 className="text-white font-bold text-base sm:text-lg line-clamp-2">
@@ -171,26 +171,26 @@ export const CaseStudies = () => {
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-4 sm:mb-5 pb-4 sm:pb-5 border-b border-[hsl(220,40%,92%)] dark:border-border/50">
                   <div className="text-center">
-                    <div className="text-[hsl(222,47%,20%)] dark:text-white font-bold text-sm sm:text-base lg:text-lg">{study.stats.mainResult}</div>
+                    <div className="text-foreground dark:text-white font-bold text-sm sm:text-base lg:text-lg">{study.stats.mainResult}</div>
                     <div className="text-[10px] sm:text-xs text-[hsl(217,91%,65%)] dark:text-[hsl(217,91%,75%)]">Result</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-[hsl(222,47%,20%)] dark:text-white font-bold text-sm sm:text-base lg:text-lg">{study.stats.seoFocus}</div>
+                    <div className="text-foreground dark:text-white font-bold text-sm sm:text-base lg:text-lg">{study.stats.seoFocus}</div>
                     <div className="text-[10px] sm:text-xs text-[hsl(217,91%,65%)] dark:text-[hsl(217,91%,75%)]">Focus</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-[hsl(222,47%,20%)] dark:text-white font-bold text-sm sm:text-base lg:text-lg">{study.stats.timeframe}</div>
+                    <div className="text-foreground dark:text-white font-bold text-sm sm:text-base lg:text-lg">{study.stats.timeframe}</div>
                     <div className="text-[10px] sm:text-xs text-[hsl(217,91%,65%)] dark:text-[hsl(217,91%,75%)]">Timeframe</div>
                   </div>
                 </div>
 
                 {/* Title */}
-                <h4 className="text-base sm:text-lg lg:text-xl font-bold mb-2 sm:mb-3 text-[hsl(222,47%,20%)] dark:text-white transition-colors line-clamp-2">
+                <h4 className="text-base sm:text-lg lg:text-xl font-bold mb-2 sm:mb-3 text-foreground dark:text-white transition-colors line-clamp-2">
                   {study.title}
                 </h4>
 
                 {/* Challenge snippet */}
-                <p className="text-xs sm:text-sm text-[hsl(220,30%,50%)] dark:text-white mb-3 sm:mb-4 line-clamp-2 sm:line-clamp-3">
+                <p className="text-xs sm:text-sm text-muted-foreground dark:text-white/90 mb-3 sm:mb-4 line-clamp-2 sm:line-clamp-3">
                   {study.challenge}
                 </p>
 

@@ -161,7 +161,7 @@ const CaseStudyDetail = () => {
                 
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-foreground">
                   Ready to Achieve{" "}
-                  <span className="bg-gradient-to-r from-gold via-yellow-500 to-gold bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[hsl(var(--brand-blue))] via-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">
                     Similar Results?
                   </span>
                 </h3>

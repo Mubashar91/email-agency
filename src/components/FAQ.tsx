@@ -42,7 +42,7 @@ export const FAQ = () => {
   return (
     <motion.section 
       id="faq"
-      className="relative py-8 sm:py-10 md:py-12 lg:py-14 bg-gradient-to-b from-background via-muted/30 to-background z-80 overflow-hidden"
+      className="relative py-8 sm:py-10 md:py-12 lg:py-14 bg-gradient-to-b from-background via-muted/10 to-background z-80 overflow-hidden"
       initial={{ opacity: 0, y: 200 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
@@ -69,18 +69,18 @@ export const FAQ = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
             >
-              <div className="px-4 py-2 bg-gradient-to-br from-[hsl(var(--gold))] via-[hsl(var(--brand-blue))] to-[hsl(var(--gold))] backdrop-blur-sm rounded-full text-sm font-semibold text-white flex items-center gap-2 border border-[hsl(var(--gold))]/20">
+              <div className="px-4 py-2 bg-gradient-to-br from-[hsl(var(--brand-blue))] via-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] backdrop-blur-sm rounded-full text-sm font-semibold text-white flex items-center gap-2 border border-[hsl(var(--brand-blue))]/20">
                 <HelpCircle className="w-4 h-4" />
                 <span>Ad Campaign FAQs</span>
               </div>
             </motion.div>
 
             {/* Heading - Centered */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6 text-[hsl(222,47%,20%)] dark:text-white px-2" style={{ textAlign: 'center' }}>
-              Frequently Asked <span className="bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">Questions</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6 text-foreground dark:text-white px-2" style={{ textAlign: 'center' }}>
+              Frequently Asked <span className="bg-gradient-to-r from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">Questions</span>
             </h2>
             {/* Description - Centered */}
-            <p className="text-base sm:text-lg md:text-xl text-[hsl(220,60%,45%)] dark:text-card-foreground/80 max-w-2xl leading-relaxed px-2 text-center mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground dark:text-card-foreground/80 max-w-2xl leading-relaxed px-2 text-center mx-auto">
               Everything you need to know about our Ad Campaign Management—platforms, tracking, creatives, reporting, and timelines.
             </p>
           </motion.div>
@@ -135,10 +135,10 @@ export const FAQ = () => {
                   <Shield className="w-6 h-6 text-[hsl(217,91%,65%)] dark:text-[hsl(217,91%,75%)]" />
                 </div>
                 <div>
-                  <h3 className="text-base sm:text-lg font-bold text-[hsl(222,47%,20%)] dark:text-white mb-1.5">
+                  <h3 className="text-base sm:text-lg font-bold text-foreground dark:text-white mb-1.5">
                     Tracking Integrity & Compliance
                   </h3>
-                  <p className="text-sm text-[hsl(220,60%,45%)] dark:text-card-foreground/80 leading-relaxed">
+                  <p className="text-sm text-muted-foreground dark:text-card-foreground/80 leading-relaxed">
                     Pixel hygiene, GA4 events, consent modes, and optional server‑side GTM to preserve accuracy and privacy.
                   </p>
                 </div>
@@ -151,10 +151,10 @@ export const FAQ = () => {
                   <Zap className="w-6 h-6 text-[hsl(217,91%,65%)] dark:text-[hsl(217,91%,75%)]" />
                 </div>
                 <div>
-                  <h3 className="text-base sm:text-lg font-bold text-[hsl(222,47%,20%)] dark:text-white mb-1.5">
+                  <h3 className="text-base sm:text-lg font-bold text-foreground dark:text-white mb-1.5">
                     Full‑Funnel Ad Management
                   </h3>
-                  <p className="text-sm text-[hsl(220,60%,45%)] dark:text-card-foreground/80 leading-relaxed">
+                  <p className="text-sm text-muted-foreground dark:text-card-foreground/80 leading-relaxed">
                     Strategy • Creatives • Launch • Optimization • Reporting • Budget Scaling
                   </p>
                 </div>
@@ -170,10 +170,10 @@ export const FAQ = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           >
-            <p className="text-base sm:text-lg md:text-xl font-semibold text-[hsl(222,47%,20%)] dark:text-white mb-2">
+            <p className="text-base sm:text-lg md:text-xl font-semibold text-foreground dark:text-white mb-2">
               Still have questions?
             </p>
-            <p className="text-sm sm:text-base text-[hsl(220,60%,45%)] dark:text-card-foreground/80 mb-4 sm:mb-5">
+            <p className="text-sm sm:text-base text-muted-foreground dark:text-card-foreground/80 mb-4 sm:mb-5">
               Our team is here to help. Get in touch and we'll respond within 2 hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">

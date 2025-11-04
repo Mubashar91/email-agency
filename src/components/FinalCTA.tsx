@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export const FinalCTA = () => {
   return (
     <motion.section 
-      className="relative overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 bg-[image:var(--gradient-dark)] z-60"
+      className="relative overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 bg-[image:var(--gradient-light)] dark:bg-[image:var(--gradient-dark)] z-60"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-50px" }}
@@ -14,16 +14,16 @@ export const FinalCTA = () => {
       {/* Enhanced background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Animated grid pattern */}
-        <div className="absolute inset-0 opacity-15">
+        <div className="absolute inset-0 opacity-5 dark:opacity-15">
           <div className="absolute inset-0" style={{
             backgroundImage: 'linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)',
             backgroundSize: '36px 36px'
           }} />
           {/* Dark overlay for stronger contrast */}
-        <div className="absolute inset-0 pointer-events-none bg-black/20 dark:bg-black/30" />
+        <div className="absolute inset-0 pointer-events-none dark:bg-black/30" />
       </div>
         {/* Soft radial vignette */}
-        <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-70 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.06)_30%,transparent_65%)]" />
+        <div className="absolute inset-0 pointer-events-none dark:mix-blend-overlay dark:opacity-70 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.06)_30%,transparent_65%)]" />
         {/* Subtle diagonal texture */}
         <div className="absolute inset-0 pointer-events-none opacity-10 bg-[repeating-linear-gradient(45deg,rgba(255,255,255,0.08)_0px,rgba(255,255,255,0.08)_2px,transparent_2px,transparent_8px)]" />
         {/* Animated gradient orbs */}
@@ -84,7 +84,7 @@ export const FinalCTA = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.3, type: "spring", stiffness: 120 }}
           >
-            <div className="px-5 py-2.5 sm:px-6 sm:py-3 bg-white/20 backdrop-blur-lg rounded-full text-sm sm:text-base font-bold text-white flex items-center gap-2 border border-white/35 shadow-xl hover:scale-105 transition-transform duration-300">
+            <div className="px-5 py-2.5 sm:px-6 sm:py-3 bg-foreground/5 dark:bg-white/20 backdrop-blur-lg rounded-full text-sm sm:text-base font-bold text-foreground dark:text-white flex items-center gap-2 border border-border dark:border-white/35 shadow-xl hover:scale-105 transition-transform duration-300">
               <motion.div
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
@@ -98,7 +98,7 @@ export const FinalCTA = () => {
 
           {/* Main headline with improved hierarchy */}
           <motion.h2 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 sm:mb-8 md:mb-10 text-white leading-[1.1]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 sm:mb-8 md:mb-10 text-foreground leading-[1.1]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -106,7 +106,7 @@ export const FinalCTA = () => {
           >
             <span className="block drop-shadow-lg">Ready to Scale</span>
             <span className="relative inline-block mt-2 sm:mt-3">
-              <span className="relative z-10 bg-gradient-to-r from-white via-white/70 to-white bg-clip-text text-transparent drop-shadow-2xl">
+              <span className="relative z-10 text-primary drop-shadow-2xl">
                 Profitable Ads?
               </span>
               <motion.span 
@@ -126,7 +126,7 @@ export const FinalCTA = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.15 }}
           >
-            <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed">
               Launch and scale cross‑channel ads with creative testing, robust tracking, and weekly optimization.
             </p>
           </motion.div>
@@ -139,7 +139,7 @@ export const FinalCTA = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2, type: "spring" }}
           >
-            <div className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-sm font-bold text-white border border-white/20 flex items-center gap-2">
+            <div className="px-4 py-2 bg-foreground/5 dark:bg-white/10 backdrop-blur-md rounded-full text-sm font-bold text-foreground dark:text-white border border-border dark:border-white/20 flex items-center gap-2">
               <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
               <span>7-Day Free Trial • No Credit Card Required</span>
             </div>
@@ -174,7 +174,7 @@ export const FinalCTA = () => {
 
           {/* Small reassurance */}
           <motion.p 
-            className="mt-6 text-white/80 text-sm max-w-xl mx-auto"
+            className="mt-6 text-muted-foreground text-sm max-w-xl mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.3 }}

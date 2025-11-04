@@ -79,13 +79,13 @@ export const Navbar = () => {
               }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="text-white font-bold text-base sm:text-lg md:text-lg lg:text-xl">D</span>
+              <span className="text-white font-bold text-base sm:text-lg md:text-lg lg:text-xl">S</span>
             </motion.div>
             <motion.span 
-              className="text-lg sm:text-xl md:text-xl lg:text-2xl font-bold bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent hover:opacity-80 transition-opacity duration-300"
+              className="text-lg sm:text-xl md:text-xl lg:text-2xl font-bold bg-gradient-to-r from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent hover:opacity-80 transition-opacity duration-300"
               whileHover={{ scale: 1.05 }}
             >
-              AdBoost
+              SocialRecruit
             </motion.span>
           </motion.div>
 
@@ -134,9 +134,9 @@ export const Navbar = () => {
                 variant="gold"
                 size="sm"
                 onClick={() => window.location.href = '/book-meeting'}
-                className="text-sm md:text-sm lg:text-base px-4 md:px-4 lg:px-7 py-2 md:py-2 lg:py-2.5 cursor-pointer bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] hover:opacity-95 text-white border-0 hover:shadow-lg hover:shadow-[hsl(var(--gold))]/30 transition-all duration-300 hover:scale-105 font-semibold whitespace-nowrap"
+                className="text-sm md:text-sm lg:text-base px-4 md:px-4 lg:px-7 py-2 md:py-2 lg:py-2.5 cursor-pointer bg-gradient-to-r from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] hover:opacity-95 text-white border-0 hover:shadow-lg hover:shadow-[hsl(var(--brand-blue))]/30 transition-all duration-300 hover:scale-105 font-semibold whitespace-nowrap"
               >
-                Book Strategy Call
+                Book a Consultation
               </Button>
             </motion.div>
           </div>
@@ -216,7 +216,7 @@ export const Navbar = () => {
                     onClick={() => window.location.href = '/book-meeting'}
                     className="w-full text-base py-3 cursor-pointer font-semibold bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] hover:opacity-95 text-white border-0 hover:shadow-lg transition-all duration-300"
                   >
-                    Book Strategy Call
+                    Book a Consultation
                   </Button>
                 </motion.div>
               </div>

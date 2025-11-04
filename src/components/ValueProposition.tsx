@@ -44,8 +44,8 @@ export const ValueProposition = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Why <span className="bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">200+</span> Brands Choose Our SMM Team
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            Why <span className="text-primary">200+</span> Brands Choose Our SMM Team
           </h2>
         </motion.div>
         
