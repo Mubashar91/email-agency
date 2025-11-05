@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ArrowRight, Calendar, Sparkles, Palette, Layers, Award } from "lucide-react";
+import { ArrowRight, Calendar, Sparkles, Mail, Inbox, Award } from "lucide-react";
 
 export const Hero = () => {
   const ref = useRef(null);
@@ -42,15 +42,15 @@ export const Hero = () => {
             }}
           >
             <div className="inline-block mb-3 sm:mb-4 md:mb-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-primary text-primary-foreground rounded-full text-xs sm:text-sm font-semibold">
-              Connecting Talent with Opportunity
+              Professional Email Management Solutions
             </div>
             
             <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extrabold mb-4 sm:mb-5 md:mb-6 leading-[1.15] sm:leading-[1.12] md:leading-[1.1] tracking-tight text-foreground">
-              Expert <span className="text-primary">Social Media Recruitment</span>
+              Master Your <span className="text-primary">Inbox & Achieve Zero</span>
             </h1>
             
             <p className="text-base sm:text-lg md:text-xl lg:text-xl text-muted-foreground mb-6 sm:mb-7 md:mb-8 leading-relaxed max-w-xl font-normal dark:text-white/90">
-              We specialize in finding top-tier talent through strategic social media sourcing. Our full-funnel approach includes candidate engagement, screening, and performance tracking to deliver the best hires for your team.
+              We transform email chaos into organized productivity. Our expert team manages your inbox, automates workflows, and ensures you never miss important messages—saving you 15+ hours per week.
             </p>
             
             <motion.div
@@ -73,9 +73,9 @@ export const Hero = () => {
                     transition={{ duration: 2, repeat: Infinity, repeatDelay: 1, ease: "linear" }}
                   />
                   <span className="flex items-center gap-2 relative z-10">
-                    <Calendar className="w-5 h-5" aria-hidden="true" />
-                    <span className="hidden sm:inline">Book a Consultation</span>
-                    <span className="sm:hidden">Book Call</span>
+                    <Mail className="w-5 h-5" aria-hidden="true" />
+                    <span className="hidden sm:inline">Get Free Email Audit</span>
+                    <span className="sm:hidden">Free Audit</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </span>
                 </Button>
@@ -101,7 +101,7 @@ export const Hero = () => {
                 >
                   <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-gold" aria-hidden="true" />
                 </motion.div>
-                <span className="font-medium">Free consultation + strategy session included</span>
+                <span className="font-medium">Free inbox audit + personalized strategy included</span>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -134,7 +134,7 @@ export const Hero = () => {
               >
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-50"></div>
                 <Award className="w-3 h-3 sm:w-4 sm:h-4 relative z-10" aria-hidden="true" />
-                <span className="text-[10px] sm:text-xs font-bold whitespace-nowrap relative z-10">Top Rated</span>
+                <span className="text-[10px] sm:text-xs font-bold whitespace-nowrap relative z-10">500+ Clients</span>
               </motion.div>
             </motion.div>
             
@@ -148,8 +148,8 @@ export const Hero = () => {
             >
               {/* Layer 1: image */}
               <motion.img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
-                alt="Recruitment agency workspace with social media analytics"
+                src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?q=80&w=2074&auto=format&fit=crop"
+                alt="Professional email management dashboard showing organized inbox"
                 className="w-full h-auto object-cover"
                 style={{ transform: "translateZ(20px)" }}
               />
@@ -194,9 +194,9 @@ export const Hero = () => {
                       animate={{ y: [-3, 3, -3] }}
                       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                     >
-                      <Palette className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-1 text-[hsl(217,91%,75%)] transition-colors" aria-hidden="true" />
-                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">1,000+</div>
-                    <div className="text-[9px] sm:text-[10px] md:text-xs text-white/90 font-medium">Placements Made</div>
+                      <Mail className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-1 text-[hsl(217,91%,75%)] transition-colors" aria-hidden="true" />
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">500+</div>
+                    <div className="text-[9px] sm:text-[10px] md:text-xs text-white/90 font-medium">Clients Served</div>
                     </motion.div>
                   </motion.div>
                   
@@ -211,9 +211,9 @@ export const Hero = () => {
                       animate={{ y: [-3, 3, -3] }}
                       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
                     >
-                      <Layers className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-1 text-[hsl(217,91%,75%)] transition-colors" aria-hidden="true" />
-                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">14 Days</div>
-                    <div className="text-[9px] sm:text-[10px] md:text-xs text-white/90 font-medium">Avg. Time to Hire</div>
+                      <Inbox className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-1 text-[hsl(217,91%,75%)] transition-colors" aria-hidden="true" />
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">15+ Hrs</div>
+                    <div className="text-[9px] sm:text-[10px] md:text-xs text-white/90 font-medium">Saved Per Week</div>
                     </motion.div>
                   </motion.div>
                   
@@ -229,8 +229,8 @@ export const Hero = () => {
                       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
                     >
                       <Award className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-1 text-[hsl(217,91%,75%)] transition-colors" aria-hidden="true" />
-                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">98%</div>
-                    <div className="text-[9px] sm:text-[10px] md:text-xs text-white/90 font-medium">Client Satisfaction</div>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">99%</div>
+                    <div className="text-[9px] sm:text-[10px] md:text-xs text-white/90 font-medium">Inbox Zero Rate</div>
                     </motion.div>
                   </motion.div>
                 </div>
