@@ -1,27 +1,27 @@
 import { motion } from "framer-motion";
 
 const tools = [
-  { name: "Google Ads", category: "Ads" },
-  { name: "Meta Ads", category: "Ads" },
-  { name: "TikTok Ads", category: "Ads" },
-  { name: "Snapchat Ads", category: "Ads" },
-  { name: "LinkedIn Ads", category: "Ads" },
-  { name: "X Ads (Twitter)", category: "Ads" },
-  { name: "GA4", category: "Analytics" },
-  { name: "Google Tag Manager", category: "Analytics" },
-  { name: "Looker Studio", category: "Analytics" },
-  { name: "Supermetrics", category: "Analytics" },
-  { name: "Segment", category: "CDP" },
-  { name: "Mixpanel", category: "Product" },
-  { name: "Hotjar", category: "UX" },
-  { name: "Meta Pixel", category: "Tracking" },
-  { name: "LinkedIn Insight Tag", category: "Tracking" },
-  { name: "TikTok Pixel", category: "Tracking" },
-  { name: "Server‑Side GTM", category: "Tracking" },
-  { name: "Shopify/GA", category: "Ecom" }
+  { name: "Gmail", category: "Email" },
+  { name: "Outlook", category: "Email" },
+  { name: "Apple Mail", category: "Email" },
+  { name: "Thunderbird", category: "Email" },
+  { name: "Mailchimp", category: "Marketing" },
+  { name: "SendGrid", category: "Marketing" },
+  { name: "Zapier", category: "Automation" },
+  { name: "IFTTT", category: "Automation" },
+  { name: "SaneBox", category: "Management" },
+  { name: "Boomerang", category: "Management" },
+  { name: "Superhuman", category: "Productivity" },
+  { name: "Spark", category: "Productivity" },
+  { name: "Proofpoint", category: "Security" },
+  { name: "Mimecast", category: "Security" },
+  { name: "Google Workspace", category: "Suite" },
+  { name: "Microsoft 365", category: "Suite" },
+  { name: "Slack Integration", category: "Integration" },
+  { name: "CRM Sync", category: "Integration" }
 ];
 
-const categories = ["Ads", "Analytics", "Tracking", "CDP", "Product", "UX", "Ecom"];
+const categories = ["Email", "Marketing", "Automation", "Management", "Productivity", "Security", "Suite", "Integration"];
 
 export const ToolsIntegration = () => {
   return (
@@ -45,16 +45,16 @@ export const ToolsIntegration = () => {
             whileHover={{ scale: 1.05 }}
           >
             <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-30"></span>
-            <span className="relative z-10">Platform Integrations</span>
+            <span className="relative z-10">Email Platform Integrations</span>
           </motion.span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 px-2 text-foreground dark:text-white leading-tight tracking-tight">
             Seamless <span className="relative inline-block">
-              <span className="bg-gradient-to-r from-[hsl(var(--brand-blue))] via-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent bg-[length:200%_100%]">Ad & Analytics Integrations</span>
+              <span className="bg-gradient-to-r from-[hsl(var(--brand-blue))] via-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent bg-[length:200%_100%]">Email Tool Integrations</span>
               <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[hsl(var(--brand-blue))]/40 to-transparent"></span>
             </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl px-2 dark:text-white/90">
-            We connect platforms end‑to‑end—ads, pixels, GA4/GTM, and dashboards—so budgets flow into measurable revenue.
+            We integrate with all major email platforms, automation tools, and productivity apps—creating a unified email management system.
           </p>
         </motion.div>
 
@@ -101,10 +101,10 @@ export const ToolsIntegration = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--brand-blue))]/3 to-[hsl(var(--brand-blue))]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[hsl(var(--brand-blue))]/30 to-transparent"></div>
             <p className="text-base sm:text-lg md:text-xl font-bold text-foreground dark:text-white mb-3 sm:mb-4 relative z-10">
-              <span className="bg-gradient-to-r from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">Using a different system?</span> We adapt. 
+              <span className="bg-gradient-to-r from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">Using a different email system?</span> We adapt. 
             </p>
             <p className="text-sm sm:text-base text-muted-foreground dark:text-white/90 leading-relaxed relative z-10">
-              Share your format or API—CSV, Sheets, CRM, or DB. We'll match your workflow end‑to‑end.
+              Share your email platform or workflow—we'll integrate seamlessly with your existing tools and processes.
             </p>
           </motion.div>
         </div>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Calendar, Clock, ArrowRight, Search, TrendingUp, FileText, Settings, BarChart3, Link } from "lucide-react";
+import { Calendar, Clock, ArrowRight, Mail, Inbox, Filter, Settings, BarChart3, Shield } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 interface BlogPost {
@@ -18,117 +18,117 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: "PMAX + Search: Structuring Google Ads for Scale",
-    excerpt: "When to split Search vs PMAX, asset group strategy, and how to read signals for profitable expansion.",
+    title: "Inbox Zero: Strategies for Email Management Success",
+    excerpt: "Master the art of inbox organization with proven strategies for achieving and maintaining inbox zero.",
     content: `
-      <h2>Playbook</h2>
+      <h2>Key Strategies</h2>
       <ul>
-        <li>Search for proven intent; PMAX to expand</li>
-        <li>Asset groups by theme and audience</li>
-        <li>Feed hygiene and creative variants</li>
-        <li>Budget guardrails and query control</li>
+        <li>Priority-based email sorting</li>
+        <li>Automated filtering and labeling</li>
+        <li>Response templates and workflows</li>
+        <li>Daily review and maintenance</li>
       </ul>
     `,
-    author: "Growth Team",
+    author: "Email Team",
     date: "October 15, 2025",
     readTime: "7 min read",
-    category: "Google Ads",
-    image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&auto=format&fit=crop&q=80"
+    category: "Best Practices",
+    image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?w=800&auto=format&fit=crop&q=80"
   },
   {
     id: 2,
-    title: "Meta Creative Testing: From Hook to Hold",
-    excerpt: "A framework for testing angles, hooks, formats, and iterations to reduce CPA and raise ROAS.",
+    title: "Email Automation: Save Hours Every Week",
+    excerpt: "Implement smart automation rules and filters to streamline your email workflow and boost productivity.",
     content: `
-      <h2>What to Test</h2>
+      <h2>Automation Tips</h2>
       <ul>
-        <li>Angles, hooks, formats, CTAs</li>
-        <li>UGC vs polished creative</li>
-        <li>Thumbstop and retention checkpoints</li>
-        <li>Audience and placement mixes</li>
+        <li>Smart filters and auto-labels</li>
+        <li>Scheduled send and follow-ups</li>
+        <li>Template responses for common queries</li>
+        <li>Priority inbox configuration</li>
       </ul>
     `,
-    author: "Paid Social",
+    author: "Automation Team",
     date: "October 8, 2025",
     readTime: "6 min read",
-    category: "Meta Ads",
-    image: "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=800&auto=format&fit=crop&q=80"
+    category: "Automation",
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80"
   },
   {
     id: 3,
-    title: "TikTok Ads: Creative that Converts (Without Looking Like Ads)",
-    excerpt: "Native-feel content, trend alignment, and the first 3 seconds that make or break performance.",
+    title: "Email Security Best Practices for Businesses",
+    excerpt: "Protect your business communications with essential email security measures and protocols.",
     content: `
-      <h2>Guidelines</h2>
+      <h2>Security Essentials</h2>
       <ul>
-        <li>Native pacing and pattern interrupts</li>
-        <li>Hook in 2s, payoff in 6–8s</li>
-        <li>Product demo + social proof</li>
-        <li>Iterate weekly from learnings</li>
+        <li>Two-factor authentication setup</li>
+        <li>Phishing detection and prevention</li>
+        <li>Encryption and secure protocols</li>
+        <li>Regular security audits</li>
       </ul>
     `,
-    author: "Creative Lab",
+    author: "Security Team",
     date: "September 28, 2025",
     readTime: "5 min read",
-    category: "TikTok",
-    image: "https://images.unsplash.com/photo-1529336953121-ad5a0d43d0d2?w=800&auto=format&fit=crop&q=80"
+    category: "Security",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&auto=format&fit=crop&q=80"
   },
   {
     id: 4,
-    title: "Attribution in 2025: GA4, Pixels, and Server‑Side GTM",
-    excerpt: "How to reconcile platform numbers with GA4 and set up durable tracking that decision‑makers trust.",
+    title: "Professional Email Etiquette Guide",
+    excerpt: "Master the art of professional email communication with these essential etiquette tips and templates.",
     content: `
-      <h2>Stack</h2>
+      <h2>Key Points</h2>
       <ul>
-        <li>GA4 events and conversions</li>
-        <li>Pixel hygiene across platforms</li>
-        <li>Server‑side GTM and deduplication</li>
-        <li>Looker Studio ROAS dashboards</li>
+        <li>Subject line best practices</li>
+        <li>Professional tone and formatting</li>
+        <li>Response time expectations</li>
+        <li>Email signature standards</li>
       </ul>
     `,
-    author: "Analytics",
+    author: "Communication Team",
     date: "September 15, 2025",
     readTime: "8 min read",
-    category: "Analytics",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80"
+    category: "Etiquette",
+    image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&auto=format&fit=crop&q=80"
   },
   {
     id: 5,
-    title: "LinkedIn + X for B2B: Demand Capture and Creation",
-    excerpt: "Account targeting, creative formats that click, and how to pair with Search to lower blended CAC.",
+    title: "Email Campaign Management: From Strategy to Execution",
+    excerpt: "Learn how to plan, execute, and optimize email campaigns that drive engagement and conversions.",
     content: `
-      <h2>Combos</h2>
+      <h2>Campaign Steps</h2>
       <ul>
-        <li>ABM audiences and exclusions</li>
-        <li>Thought leadership vs direct response</li>
-        <li>Retargeting and sequence design</li>
-        <li>Sync with Search and CRO</li>
+        <li>Audience segmentation strategies</li>
+        <li>Content planning and scheduling</li>
+        <li>A/B testing and optimization</li>
+        <li>Performance tracking and analytics</li>
       </ul>
     `,
-    author: "B2B Team",
+    author: "Campaign Team",
     date: "August 30, 2025",
     readTime: "9 min read",
-    category: "LinkedIn & X",
-    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&auto=format&fit=crop&q=80"
+    category: "Campaigns",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80"
   },
   {
     id: 6,
-    title: "Snapchat and Emerging Channels: Finding Incremental ROAS",
-    excerpt: "Where Snapchat fits, how to measure incrementality, and when to scale or pause.",
+    title: "Email Analytics: Measuring What Matters",
+    excerpt: "Track the right metrics to understand email performance and make data-driven decisions.",
     content: `
-      <h2>Checklist</h2>
+      <h2>Key Metrics</h2>
       <ul>
-        <li>Audience fit and creative style</li>
-        <li>Event mapping and goals</li>
-        <li>Holdout tests and lift studies</li>
-        <li>Budget caps and kill rules</li>
+        <li>Open rates and click-through rates</li>
+        <li>Response time analytics</li>
+        <li>Email volume and patterns</li>
+        <li>Productivity measurements</li>
       </ul>
     `,
-    author: "Media Team",
+    author: "Analytics Team",
     date: "August 12, 2025",
     readTime: "8 min read",
-    category: "Snapchat",
-    image: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?w=800&auto=format&fit=crop&q=80"
+    category: "Analytics",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80"
   }
 ];
 
@@ -154,13 +154,13 @@ export const Blog = () => {
           transition={{ duration: 0.6 }}
         >
           <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-br from-[hsl(var(--gold))] via-[hsl(var(--brand-blue))] to-[hsl(var(--gold))] text-white text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
-            Performance Insights
+            Email Insights
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 text-[hsl(222,47%,11%)] dark:text-foreground">
-            Blog & <span className="bg-gradient-to-r from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">Ad Playbooks</span>
+            Blog & <span className="bg-gradient-to-r from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">Email Guides</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl leading-relaxed">
-            Multi‑platform ad strategies, creative frameworks, tracking setups, and reporting that drive ROAS across Google, Meta, TikTok, Snapchat, LinkedIn, and X.
+            Expert email management strategies, automation tips, security best practices, and productivity guides to master your inbox.
           </p>
         </motion.div>
 

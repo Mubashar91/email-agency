@@ -1,30 +1,30 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { Search, Settings, Rocket, TrendingUp } from "lucide-react";
+import { ClipboardCheck, Settings, Mail, BarChart3 } from "lucide-react";
 
 const steps = [
   {
-    icon: Search,
+    icon: ClipboardCheck,
     step: "Step 1",
-    title: "Audit & Strategy",
-    description: "Analyze current campaigns, identify opportunities, and define KPIs. Map out channel strategy, budget allocation, and tracking requirements."
+    title: "Inbox Audit & Assessment",
+    description: "Analyze your current email workflow, identify pain points, and define priorities. Map out organization strategy and automation opportunities."
   },
   {
     icon: Settings,
     step: "Step 2",
-    title: "Setup & Implementation",
-    description: "Build campaign structures, implement pixels and GA4 events, configure GTM. Set up creative testing frameworks and tracking dashboards."
+    title: "Setup & Configuration",
+    description: "Implement filters, labels, and automation rules. Configure email templates, response protocols, and notification preferences."
   },
   {
-    icon: Rocket,
+    icon: Mail,
     step: "Step 3",
-    title: "Launch & Test",
-    description: "Deploy campaigns across channels, launch creative variants, and monitor initial performance. Rapid testing to identify winning combinations."
+    title: "Daily Management",
+    description: "Handle incoming emails, prioritize responses, and maintain organized inbox. Professional correspondence and follow-up management."
   },
   {
-    icon: TrendingUp,
+    icon: BarChart3,
     step: "Step 4",
-    title: "Optimize & Scale",
-    description: "Weekly optimization based on data, scale winning campaigns, adjust budgets. Continuous creative testing and performance reporting."
+    title: "Monitor & Optimize",
+    description: "Weekly performance reviews, response time tracking, and workflow optimization. Continuous improvement and detailed reporting."
   }
 ];
 
@@ -56,12 +56,12 @@ export const HowItWorks = () => {
           </motion.span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-foreground dark:text-white leading-tight tracking-tight">
             How We <span className="relative inline-block">
-              <span className="bg-gradient-to-r from-[hsl(var(--brand-blue))] via-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent bg-[length:200%_100%]">Execute</span>
+              <span className="bg-gradient-to-r from-[hsl(var(--brand-blue))] via-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent bg-[length:200%_100%]">Manage</span>
               <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[hsl(var(--brand-blue))]/40 to-transparent"></span>
             </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed dark:text-white/90">
-            From audit to optimization in 7–14 days. Data-driven process, measurable results, and continuous improvement.
+            From setup to daily management in 3–5 days. Organized process, professional handling, and continuous optimization.
           </p>
         </motion.div>
 
@@ -121,15 +121,6 @@ export const HowItWorks = () => {
                 </motion.div>
               </div>
               
-              {index < steps.length - 1 && (
-                <motion.div 
-                  className="absolute left-16 top-32 w-0.5 h-16 bg-gradient-to-b from-[hsl(222,47%,20%)] via-[hsl(222,35%,25%)] to-[hsl(222,30%,30%)] hidden md:block"
-                  initial={{ scaleY: 0 }}
-                  whileInView={{ scaleY: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: prefersReducedMotion ? 0.3 : 0.5, delay: index * 0.15 + 0.3 }}
-                />
-              )}
             </motion.div>
           ))}
           <motion.div 
@@ -140,7 +131,7 @@ export const HowItWorks = () => {
             transition={{ duration: prefersReducedMotion ? 0.3 : 0.5 }}
           >
             <a href="#contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] text-white hover:opacity-90 hover:scale-105 transition-all duration-300 font-semibold shadow-md">
-              Book Strategy Call
+              Get Started Today
             </a>
           </motion.div>
         </div>

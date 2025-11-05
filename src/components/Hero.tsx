@@ -59,19 +59,27 @@ export const Hero = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="space-y-3"
             >
-              <Button 
-                size="lg"
-                onClick={() => window.location.href = '/book-meeting'}
-                className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 rounded-lg font-semibold transition-colors"
-                aria-label="Book a free 30-minute design consultation"
-              >
-                <span className="flex items-center gap-2">
-                  <Calendar className="w-5 h-5" aria-hidden="true" />
-                  <span className="hidden sm:inline">Book a Consultation</span>
-                  <span className="sm:hidden">Book Call</span>
-                  <ArrowRight className="w-5 h-5" aria-hidden="true" />
-                </span>
-              </Button>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button 
+                  size="lg"
+                  onClick={() => window.location.href = '/book-meeting'}
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 rounded-lg font-semibold transition-colors relative overflow-hidden group"
+                  aria-label="Book a free 30-minute design consultation"
+                >
+                  <motion.span 
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent"
+                    initial={{ x: '-100%' }}
+                    animate={{ x: '200%' }}
+                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 1, ease: "linear" }}
+                  />
+                  <span className="flex items-center gap-2 relative z-10">
+                    <Calendar className="w-5 h-5" aria-hidden="true" />
+                    <span className="hidden sm:inline">Book a Consultation</span>
+                    <span className="sm:hidden">Book Call</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                  </span>
+                </Button>
+              </motion.div>
               
               {/* Urgency indicator */}
               <motion.div

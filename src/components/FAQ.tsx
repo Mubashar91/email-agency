@@ -9,32 +9,32 @@ import { HelpCircle, Shield, Zap } from "lucide-react";
 
 const faqs = [
   {
-    question: "Which ad platforms do you manage?",
-    answer: "Google (Search/PMAX/YouTube), Meta (Facebook/Instagram), TikTok, Snapchat, LinkedIn, and X (Twitter). We also set up pixels, GA4, and GTM."
+    question: "Which email platforms do you support?",
+    answer: "Gmail, Outlook, Apple Mail, Thunderbird, and all major email clients. We also integrate with Google Workspace, Microsoft 365, and custom email servers."
   },
   {
-    question: "How do you structure campaigns?",
-    answer: "We build channel‑specific structures: PMAX asset groups by theme, Search by intent, and Paid Social by creative angles. Weekly optimization with clear guardrails."
+    question: "How do you organize my inbox?",
+    answer: "We implement smart filtering, priority inbox setup, automated labeling, and custom folder structures. Everything is tailored to your workflow and priorities."
   },
   {
-    question: "What about tracking and attribution?",
-    answer: "We implement GA4 events, platform pixels, and (optionally) server‑side GTM. We reconcile platform vs GA4 and provide Looker dashboards for ROAS/CAC."
+    question: "What about email security and privacy?",
+    answer: "We implement two-factor authentication, encryption protocols, phishing protection, and comply with all data privacy regulations. Your emails remain completely confidential."
   },
   {
-    question: "How fast can we launch?",
-    answer: "Typical timeline: Audit (3–5 days), Tracking fixes (2–5 days), First launch (7–10 days). We iterate weekly from live data."
+    question: "How fast can you get started?",
+    answer: "Typical timeline: Initial audit (1–2 days), Setup and configuration (2–3 days), Full management launch (3–5 days). We start managing emails immediately after setup."
   },
   {
-    question: "Do you create ad creatives?",
-    answer: "Yes. We produce UGC and polished variants tailored per platform and test hooks, angles, and formats to reduce CPA and improve ROAS."
+    question: "Do you handle email responses?",
+    answer: "Yes. We draft professional responses, manage follow-ups, and handle routine correspondence. You approve templates and maintain control over important communications."
   },
   {
-    question: "How do you report performance?",
-    answer: "Weekly summaries with spend, CPA, ROAS, top creatives, learnings, and next actions. Monthly deep dives with attribution and budget recommendations."
+    question: "How do you report on email management?",
+    answer: "Daily summaries of priority emails, weekly performance reports with response times and inbox metrics, and monthly reviews with optimization recommendations."
   },
   {
-    question: "What budgets do you work with?",
-    answer: "We work with a range—from early tests to $500k+/mo. We scale only when unit economics hold, with caps and kill rules to protect efficiency."
+    question: "What email volumes do you handle?",
+    answer: "We manage everything from 50 to 1000+ emails daily. Our systems scale with your needs, maintaining efficiency regardless of volume."
   }
 ];
 
@@ -71,7 +71,7 @@ export const FAQ = () => {
             >
               <div className="px-4 py-2 bg-gradient-to-br from-[hsl(var(--brand-blue))] via-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] backdrop-blur-sm rounded-full text-sm font-semibold text-white flex items-center gap-2 border border-[hsl(var(--brand-blue))]/20">
                 <HelpCircle className="w-4 h-4" />
-                <span>Ad Campaign FAQs</span>
+                <span>Email Management FAQs</span>
               </div>
             </motion.div>
 
@@ -81,7 +81,7 @@ export const FAQ = () => {
             </h2>
             {/* Description - Centered */}
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground dark:text-card-foreground/80 max-w-2xl leading-relaxed px-2 text-center mx-auto">
-              Everything you need to know about our Ad Campaign Management—platforms, tracking, creatives, reporting, and timelines.
+              Everything you need to know about our Email Management services—platforms, security, automation, reporting, and timelines.
             </p>
           </motion.div>
 
@@ -136,10 +136,10 @@ export const FAQ = () => {
                 </div>
                 <div>
                   <h3 className="text-base sm:text-lg font-bold text-foreground dark:text-white mb-1.5">
-                    Tracking Integrity & Compliance
+                    Security & Compliance
                   </h3>
                   <p className="text-sm text-muted-foreground dark:text-card-foreground/80 leading-relaxed">
-                    Pixel hygiene, GA4 events, consent modes, and optional server‑side GTM to preserve accuracy and privacy.
+                    End-to-end encryption, two-factor authentication, GDPR compliance, and enterprise-grade security protocols.
                   </p>
                 </div>
               </div>
@@ -152,10 +152,10 @@ export const FAQ = () => {
                 </div>
                 <div>
                   <h3 className="text-base sm:text-lg font-bold text-foreground dark:text-white mb-1.5">
-                    Full‑Funnel Ad Management
+                    Complete Email Management
                   </h3>
                   <p className="text-sm text-muted-foreground dark:text-card-foreground/80 leading-relaxed">
-                    Strategy • Creatives • Launch • Optimization • Reporting • Budget Scaling
+                    Inbox Organization • Response Management • Automation • Security • Reporting • Campaign Management
                   </p>
                 </div>
               </div>

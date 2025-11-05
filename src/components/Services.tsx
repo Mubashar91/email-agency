@@ -1,43 +1,43 @@
-import { Palette, Layout, Package, Smartphone, Video, Sparkles } from "lucide-react";
+import { Mail, Inbox, Send, Filter, BarChart3, Sparkles } from "lucide-react";
 import { motion, useInView, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const services = [
   {
-    icon: Palette,
-    title: "Ad Strategy & Planning",
-    description: "Full‑funnel strategy, audience research, budgets, and channel mix to hit your CAC and ROAS targets",
-    benefit: "Clear growth plan"
+    icon: Inbox,
+    title: "Inbox Management",
+    description: "Complete inbox organization, prioritization, and daily management to keep your email under control and stress-free",
+    benefit: "Zero inbox chaos"
   },
   {
-    icon: Layout,
-    title: "Google Ads (Search/PMAX/YouTube)",
-    description: "Build and optimize Search, Performance Max, and YouTube campaigns with robust keyword and creative testing",
-    benefit: "Capture intent"
+    icon: Mail,
+    title: "Email Campaign Management",
+    description: "Design, schedule, and manage email marketing campaigns with personalized content and optimal timing",
+    benefit: "Higher engagement"
   },
   {
-    icon: Package,
-    title: "Meta & TikTok Ads",
-    description: "High‑performing creatives and structures across Facebook, Instagram, and TikTok with ongoing A/B testing",
-    benefit: "Scale creatives"
+    icon: Send,
+    title: "Response & Follow-up",
+    description: "Professional email responses, follow-ups, and correspondence management to maintain timely communication",
+    benefit: "Never miss a reply"
   },
   {
-    icon: Smartphone,
-    title: "LinkedIn & X (Twitter) Ads",
-    description: "B2B targeting on LinkedIn plus trend‑aware X campaigns for awareness, traffic, and demand capture",
-    benefit: "Reach decision‑makers"
+    icon: Filter,
+    title: "Email Filtering & Automation",
+    description: "Smart filters, rules, and automation to organize incoming emails and reduce manual sorting time",
+    benefit: "Save hours daily"
   },
   {
-    icon: Video,
-    title: "Snapchat & Emerging Platforms",
-    description: "Expand reach with Snapchat and other paid social where your buyers spend time, tracked end‑to‑end",
-    benefit: "Unlock reach"
+    icon: BarChart3,
+    title: "Analytics & Reporting",
+    description: "Track email performance, open rates, response times, and engagement metrics with detailed reports",
+    benefit: "Data-driven insights"
   },
   {
     icon: Sparkles,
-    title: "Tracking, Analytics & CRO",
-    description: "GTM/GA4, pixels, server‑side tracking, dashboards, and landing page optimization for real performance",
-    benefit: "Measure & improve"
+    title: "Email Strategy & Optimization",
+    description: "Comprehensive email strategy, template creation, and workflow optimization for maximum efficiency",
+    benefit: "Streamlined workflow"
   }
 ];
 
@@ -70,15 +70,15 @@ export const Services = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 bg-gradient-to-br from-[hsl(var(--gold))] via-[hsl(var(--brand-blue))] to-[hsl(var(--gold))] text-white text-xs sm:text-sm md:text-base font-semibold rounded-full mb-3 sm:mb-4 shadow-[0_8px_24px_-6px_rgba(59,130,246,0.4)] border border-white/20 backdrop-blur-sm relative overflow-hidden">
+          <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 bg-gradient-to-br from-[hsl(var(--gold))] via-[hsl(var(--brand-blue))] to-[hsl(var(--gold))] text-white text-xs sm:text-sm md:text-base font-semibold rounded-full mb-3 sm:mb-4 shadow-[0_8px_24px_-6px_rgba(0,123,255,0.4)] border border-white/20 backdrop-blur-sm relative overflow-hidden">
             <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-50"></span>
-            <span className="relative z-10">Ad Campaign Services</span>
+            <span className="relative z-10">Email Management Services</span>
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-foreground dark:text-white leading-tight tracking-tight">
-            Full-Funnel <span className="text-primary">Ad Management</span>
+            Complete <span className="text-primary">Email Solutions</span>
           </h2>
           <p className="text-base sm:text-lg md:text-lg lg:text-xl text-muted-foreground max-w-3xl leading-relaxed px-2 dark:text-white/90">
-            Google, Meta, TikTok, Snapchat, LinkedIn, and X—planned, launched, and optimized with creative testing, robust tracking, and clear reporting.
+            From inbox management to campaign execution—organized, optimized, and managed with professional care and attention to detail.
           </p>
         </motion.div>
 
@@ -99,26 +99,34 @@ export const Services = () => {
               }}
               whileHover={{ 
                 y: -12, 
-                scale: 1.02,
-                rotateY: 3,
-                transition: { 
-                  type: "spring", 
-                  stiffness: 400, 
-                  damping: 25,
-                  mass: 0.5
-                }
+                scale: 1.03,
+                rotateY: 5,
+                transition: { type: "spring", stiffness: 300, damping: 20 }
               }}
+              style={{ transformStyle: "preserve-3d" }}
             >
               {/* Hover gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--gold))]/10 dark:from-[hsl(var(--gold))]/20 via-[hsl(250,100%,98%)]/10 dark:via-[hsl(250,45%,20%)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               
               <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row items-start gap-4 sm:gap-5 md:gap-5 lg:gap-6 relative z-10">
                 <motion.div 
-                  className="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-lg sm:rounded-xl bg-gradient-to-br from-[hsl(var(--gold))] via-[hsl(var(--brand-blue))] to-[hsl(var(--gold))] text-white ring-1 ring-[hsl(var(--gold))]/30 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-[0_18px_40px_-12px_hsl(var(--brand-blue)),0_0_20px_hsl(var(--gold)/0.3)] group-hover:shadow-[0_20px_50px_-12px_hsl(var(--brand-blue)),0_0_30px_hsl(var(--gold)/0.5)]"
+                  className="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-lg sm:rounded-xl bg-gradient-to-br from-[hsl(var(--gold))] via-[hsl(var(--brand-blue))] to-[hsl(var(--gold))] text-white ring-1 ring-[hsl(var(--gold))]/30 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-[0_18px_40px_-12px_hsl(var(--brand-blue)),0_0_20px_hsl(var(--gold)/0.3)] group-hover:shadow-[0_20px_50px_-12px_hsl(var(--brand-blue)),0_0_30px_hsl(var(--gold)/0.5)] relative overflow-hidden"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
+                  animate={{
+                    y: [0, -5, 0],
+                  }}
+                  style={{
+                    transition: `transform ${index * 0.1}s ease-in-out`
+                  }}
                 >
-                  <service.icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-7 md:h-7 lg:w-8 lg:h-8" />
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                    initial={{ x: '-100%' }}
+                    animate={{ x: '100%' }}
+                    transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 2, delay: index * 0.2 }}
+                  />
+                  <service.icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-7 md:h-7 lg:w-8 lg:h-8 relative z-10" />
                 </motion.div>
                 <div className="flex-1 w-full">
                   <h3 className="text-xl sm:text-2xl md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-3 text-foreground dark:text-white transition-colors duration-300">

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, Clock, Video, CheckCircle2, ArrowLeft, Menu, X, Phone, Mail, Star, Shield, Zap } from "lucide-react";
+import { Calendar, Clock, Video, CheckCircle2, ArrowLeft, Menu, X, Phone, Mail, Star, Shield, Inbox, MailCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
@@ -58,18 +58,18 @@ export const BookMeeting = () => {
               whileHover={{ scale: 1.02 }}
             >
               <motion.div
-                className="relative w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-gold via-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:shadow-gold/30 transition-all duration-500"
+                className="relative w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] rounded-2xl flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:shadow-[hsl(var(--brand-blue))]/30 transition-all duration-500"
                 whileHover={{ rotate: 5, scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
-                <span className="text-foreground font-black text-xl sm:text-2xl">L</span>
+                <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </motion.div>
               <div className="flex flex-col">
-                <span className="text-xl sm:text-2xl font-black bg-gradient-to-r from-foreground via-foreground to-foreground/90 bg-clip-text text-transparent group-hover:from-gold group-hover:to-yellow-600 transition-all duration-300">
-                  LuxVA
+                <span className="text-xl sm:text-2xl font-black bg-gradient-to-r from-foreground via-foreground to-foreground/90 bg-clip-text text-transparent group-hover:from-[hsl(var(--brand-blue))] group-hover:to-[hsl(var(--brand-blue))] transition-all duration-300">
+                  EmailPro Agency
                 </span>
-                <span className="text-[10px] sm:text-xs text-gold/80 font-semibold -mt-1 tracking-wide">Premium VAs</span>
+                <span className="text-[10px] sm:text-xs text-[hsl(var(--brand-blue))]/80 font-semibold -mt-1 tracking-wide">Email Management</span>
               </div>
             </motion.div>
 
@@ -92,11 +92,11 @@ export const BookMeeting = () => {
                   <span className="text-sm">+1 (234) 567-890</span>
                 </a>
                 <div className="w-px h-6 bg-border/50" />
-                <a href="mailto:contact@luxva.com" className="flex items-center gap-2 text-muted-foreground hover:text-gold transition-all duration-300 font-medium group">
+                <a href="mailto:hello@emailproagency.com" className="flex items-center gap-2 text-muted-foreground hover:text-gold transition-all duration-300 font-medium group">
                   <div className="w-8 h-8 rounded-lg bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-all duration-300">
                     <Mail className="w-4 h-4 text-gold" />
                   </div>
-                  <span className="text-sm">contact@luxva.com</span>
+                  <span className="text-sm">hello@emailproagency.com</span>
                 </a>
               </div>
               
@@ -106,7 +106,7 @@ export const BookMeeting = () => {
               >
                 <Button
                   onClick={() => document.querySelector('.calendly-inline-widget')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-gold to-yellow-600 hover:from-yellow-600 hover:to-gold text-foreground font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] hover:opacity-90 text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
                 >
                   <Calendar className="w-4 h-4 mr-2" />
                   Book Now
@@ -163,7 +163,7 @@ export const BookMeeting = () => {
                         document.querySelector('.calendly-inline-widget')?.scrollIntoView({ behavior: 'smooth' });
                         setMobileMenuOpen(false);
                       }}
-                      className="w-full bg-gradient-to-r from-gold to-yellow-600 hover:from-yellow-600 hover:to-gold text-foreground font-bold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="w-full bg-gradient-to-r from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] hover:opacity-90 text-white font-bold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                     >
                       <Calendar className="w-5 h-5 mr-2" />
                       Book Your Meeting Now
@@ -205,7 +205,7 @@ export const BookMeeting = () => {
                     </motion.a>
                     
                     <motion.a
-                      href="mailto:contact@luxva.com"
+                      href="mailto:hello@emailproagency.com"
                       className="flex items-center gap-3 p-3 rounded-xl text-muted-foreground hover:text-gold hover:bg-gold/5 transition-all duration-300 group"
                       initial={{ x: -20, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
@@ -216,7 +216,7 @@ export const BookMeeting = () => {
                       </div>
                       <div className="flex flex-col">
                         <span className="text-xs text-muted-foreground/60 font-medium">Email Us</span>
-                        <span className="font-semibold">contact@luxva.com</span>
+                        <span className="font-semibold">hello@emailproagency.com</span>
                       </div>
                     </motion.a>
                   </div>
@@ -240,10 +240,10 @@ export const BookMeeting = () => {
             {/* Section Header */}
             <div>
               <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-foreground">
-                Book Your Consultation
+                Book Your Email Strategy Call
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
-                Schedule a free 15-minute call to discuss how we can help your business.
+                Schedule a free 15-minute call to discuss how we can transform your email management.
               </p>
             </div>
 
@@ -304,11 +304,11 @@ export const BookMeeting = () => {
               </h3>
               <ul className="space-y-3">
                 {[
-                  "Your current operational challenges",
-                  "How VAs can fit into your workflow",
-                  "Custom solutions for your business",
-                  "Pricing & team structure options",
-                  "Next steps to get started",
+                  "Your current email management challenges",
+                  "Inbox organization and automation strategies",
+                  "Custom email workflow solutions",
+                  "Pricing & service package options",
+                  "Next steps to achieve inbox zero",
                 ].map((item, index) => (
                   <li
                     key={index}
@@ -328,12 +328,12 @@ export const BookMeeting = () => {
             {/* Trust Indicators */}
             <div className="grid grid-cols-3 gap-4 pt-4">
               <div className="text-center p-4 bg-card border border-border rounded-lg">
-                <div className="text-2xl font-bold text-gold">200+</div>
+                <div className="text-2xl font-bold text-gold">500+</div>
                 <div className="text-xs text-muted-foreground mt-1">Clients</div>
               </div>
               <div className="text-center p-4 bg-card border border-border rounded-lg">
-                <div className="text-2xl font-bold text-gold">70%</div>
-                <div className="text-xs text-muted-foreground mt-1">Cost Saved</div>
+                <div className="text-2xl font-bold text-gold">75%</div>
+                <div className="text-xs text-muted-foreground mt-1">Time Saved</div>
               </div>
               <div className="text-center p-4 bg-card border border-border rounded-lg">
                 <div className="text-2xl font-bold text-gold">4.9/5</div>
@@ -376,28 +376,28 @@ export const BookMeeting = () => {
               What Our Clients Say
             </h2>
             <p className="text-muted-foreground">
-              See why businesses trust LuxVA
+              See why professionals trust EmailPro Agency
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                name: "Sarah Johnson",
-                role: "CEO, TechStart Inc",
-                text: "LuxVA transformed our operations. The consultation was thorough and the onboarding was seamless.",
+                name: "Sarah Mitchell",
+                role: "CEO, TechVentures Inc.",
+                text: "EmailPro transformed my productivity. I went from 200+ daily emails to inbox zero. The consultation was thorough and results were immediate.",
                 rating: 5
               },
               {
                 name: "Michael Chen",
-                role: "Founder, Digital Growth",
-                text: "Best decision we made. Our VA has become an integral part of our team within weeks.",
+                role: "Marketing Director, GrowthLabs",
+                text: "Best investment for our team. Email campaigns are now automated and our open rates doubled. Saved us 15 hours per week.",
                 rating: 5
               },
               {
-                name: "Emma Davis",
-                role: "Director, MarketPro",
-                text: "Professional, reliable, and cost-effective. Couldn't ask for more from a VA service.",
+                name: "Jessica Thompson",
+                role: "Founder, Stellar Consulting",
+                text: "Professional, reliable, and incredibly efficient. They handle everything from inbox organization to client communications flawlessly.",
                 rating: 5
               }
             ].map((testimonial, idx) => (
@@ -438,13 +438,13 @@ export const BookMeeting = () => {
         <div className="container mx-auto px-4 sm:px-6 md:px-8 py-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-gold to-yellow-600 rounded-lg flex items-center justify-center">
-                <span className="text-foreground font-extrabold text-sm">L</span>
+              <div className="w-8 h-8 bg-gradient-to-br from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] rounded-lg flex items-center justify-center">
+                <Mail className="w-4 h-4 text-white" />
               </div>
-              <span className="text-lg font-bold">LuxVA</span>
+              <span className="text-lg font-bold">EmailPro Agency</span>
             </div>
             <p className="text-sm text-muted-foreground text-center sm:text-left">
-              © 2025 LuxVA. All rights reserved. Premium Virtual Assistant Services.
+              © 2025 EmailPro Agency. All rights reserved. Professional Email Management Services.
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-muted-foreground hover:text-gold transition-colors text-sm">

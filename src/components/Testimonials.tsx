@@ -4,24 +4,24 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    name: "Emma Rodriguez",
-    company: "Luxe Beauty Co.",
-    role: "Founder",
-    content: "We scaled Meta + Google without sacrificing ROAS. The weekly creative tests and budget guardrails made growth predictable.",
-    rating: 5
-  },
-  {
-    name: "David Chen",
-    company: "Peak Performance",
+    name: "Sarah Mitchell",
+    company: "TechVentures Inc.",
     role: "CEO",
-    content: "LinkedIn + Search finally drove qualified SQLs at a lower blended CAC. Reporting was clear and actionable.",
+    content: "Their email management transformed my productivity. I went from drowning in 200+ daily emails to having a perfectly organized inbox. Response times improved by 75%.",
     rating: 5
   },
   {
-    name: "Sophie Martens",
-    company: "Urban Eats",
-    role: "Marketing Lead",
-    content: "TikTok + Snapchat added real incremental orders. Creative iterations each week kept CPA trending down.",
+    name: "Michael Chen",
+    company: "GrowthLabs",
+    role: "Marketing Director",
+    content: "The email campaign management service doubled our open rates and tripled conversions. Their automation workflows saved us 15 hours per week.",
+    rating: 5
+  },
+  {
+    name: "Jessica Thompson",
+    company: "Stellar Consulting",
+    role: "Founder",
+    content: "Best investment for my business. They handle everything from inbox organization to client communications. I can finally focus on strategy instead of email chaos.",
     rating: 5
   }
 ];
@@ -45,10 +45,10 @@ export const Testimonials = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-foreground dark:text-white leading-tight tracking-tight px-2">
-            Real Results from <span className="text-primary">Growth Teams</span>
+            Trusted by <span className="text-primary">500+ Professionals</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl px-2 dark:text-white/90">
-            Real results—lower CPA, higher ROAS, and faster learning loops across Google, Meta, TikTok, Snapchat, LinkedIn, and X.
+            Real results—inbox zero achieved, response times reduced by 75%, and email productivity increased across all industries.
           </p>
         </motion.div>
 
@@ -116,10 +116,10 @@ export const Testimonials = () => {
               Success Story
             </span>
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-foreground">
-              Case Study: <span className="text-primary">3.4x ROAS Scaling Across Channels</span>
+              Case Study: <span className="text-primary">75% Time Saved with Email Management</span>
             </h3>
             <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-5 sm:mb-6 leading-relaxed max-w-3xl">
-              See how we combined PMAX + Meta creative testing to scale budget while improving CPA—validated in GA4.
+              See how we helped a Fortune 500 executive achieve inbox zero and reduce email processing time from 4 hours to 1 hour daily.
             </p>
             <Button size="lg" className="w-full sm:w-auto text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] text-white hover:opacity-95 transition-all duration-300 hover:scale-105 font-semibold border-0">
               View Full Case Study
