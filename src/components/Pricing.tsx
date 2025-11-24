@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Check, Star, Gift, Calendar, Sparkles, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useI18n } from "@/components/I18nProvider";
 
 // Constants
 const MAX_VA_COUNT = 10;
@@ -70,6 +71,7 @@ const plans: PricingPlan[] = [
 
 export const Pricing = () => {
   const [vaCount, setVaCount] = useState(1);
+  const { t } = useI18n();
   
   const calculateDiscount = (count: number) => {
     return count >= BULK_DISCOUNT_THRESHOLD ? BULK_DISCOUNT_RATE : 0;
@@ -108,13 +110,13 @@ export const Pricing = () => {
             whileHover={{ scale: 1.05 }}
           >
             <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-50"></span>
-            <span className="relative z-10">Transparent Pricing</span>
+            <span className="relative z-10">{t("pricing.badge")}</span>
           </motion.span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 text-foreground leading-tight tracking-tight">
-            Email Management <span className="text-primary">Packages</span>
+            {t("pricing.title.before")}<span className="text-primary">{t("pricing.title.highlight")}</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            Choose a plan that fits your email volume and needs. Professional management with transparent pricing. No hidden fees.
+            {t("pricing.subtitle")}
           </p>
         </motion.div>
 
@@ -143,10 +145,10 @@ export const Pricing = () => {
                   </motion.div>
                   <div className="flex-1">
                     <h3 className="text-2xl sm:text-3xl font-bold mb-2 text-foreground dark:text-white">
-                      Free 15‑Minute Consultation
+                      {t("pricing.freeCall.title")}
                     </h3>
                     <p className="text-sm sm:text-base text-muted-foreground dark:text-white/80 leading-relaxed">
-                      Get expert advice on email management, automation, and workflow optimization before choosing a plan.
+                      {t("pricing.freeCall.desc")}
                     </p>
                   </div>
                 </div>
@@ -155,7 +157,7 @@ export const Pricing = () => {
                   className="flex-shrink-0 bg-gradient-to-r from-[hsl(221,54%,53%)] to-[hsl(217,89%,61%)] text-white hover:from-[hsl(221,54%,58%)] hover:to-[hsl(217,89%,66%)] transition-all duration-300 hover:scale-105 hover:shadow-xl font-bold shadow-lg px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg border-0 rounded-xl"
                   onClick={() => window.location.href = '/book-meeting'}
                 >
-                  Book Free Call →
+                  {t("pricing.freeCall.button")}
                 </Button>
               </div>
             </div>
@@ -201,10 +203,10 @@ export const Pricing = () => {
                   </motion.div>
                   <div className="flex-1">
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-foreground dark:text-white">
-                      One Week Free Trial
+                      {t("pricing.freeTrial.title")}
                     </h3>
                     <p className="text-sm sm:text-base md:text-lg text-muted-foreground dark:text-white/80 leading-relaxed">
-                      New customers get <span className="font-bold text-[hsl(199,89%,48%)] dark:text-[hsl(199,89%,60%)] px-2 py-0.5 bg-[hsl(199,89%,48%)]/10 dark:bg-[hsl(199,89%,48%)]/20 rounded-md">7 days free</span> on any plan. No credit card required.
+                      {t("pricing.freeTrial.desc")}
                     </p>
                   </div>
                 </div>
@@ -213,7 +215,7 @@ export const Pricing = () => {
                   className="flex-shrink-0 bg-gradient-to-r from-[hsl(199,89%,48%)] to-[hsl(217,89%,61%)] text-white hover:from-[hsl(199,89%,53%)] hover:to-[hsl(217,89%,66%)] transition-all duration-300 hover:scale-105 hover:shadow-2xl font-bold shadow-xl px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg border-0 rounded-xl"
                   onClick={() => window.location.href = '/book-meeting'}
                 >
-                  Start Free Trial →
+                  {t("pricing.freeCall.button")}
                 </Button>
               </div>
             </div>
@@ -294,7 +296,7 @@ export const Pricing = () => {
                     >
                       <Star className="w-4 h-4 fill-current drop-shadow-lg" />
                     </motion.div>
-                    <span className="drop-shadow-sm">{plan.badge}</span>
+                    <span className="drop-shadow-sm">{t(`pricing.plan.${index}.badge`)}</span>
                   </motion.div>
                 )}
               
@@ -308,14 +310,14 @@ export const Pricing = () => {
                     transition={{ duration: 0.6, delay: 0.2, type: "spring", stiffness: 400 }}
                     whileHover={{ scale: 1.05 }}
                   >
-                    {plan.name}
+                    {t(`pricing.plan.${index}.name`)}
                   </motion.h3>
                   <div className="flex items-center gap-2 flex-wrap">
                     <p className="text-sm font-semibold text-[hsl(221,54%,53%)] dark:text-[hsl(217,89%,61%)]">
-                      {plan.hours}
+                      {t(`pricing.plan.${index}.hours`)}
                     </p>
                     <span className="px-3 py-1 text-xs font-medium rounded-full bg-gradient-to-r from-[hsl(221,54%,53%)]/10 to-[hsl(217,89%,61%)]/10 dark:from-[hsl(221,54%,53%)]/20 dark:to-[hsl(217,89%,61%)]/20 text-[hsl(221,54%,53%)] dark:text-[hsl(217,89%,61%)] border border-[hsl(221,54%,53%)]/20">
-                      Email Management
+                      {t("pricing.pill")}
                     </span>
                   </div>
                 </div>
@@ -335,7 +337,7 @@ export const Pricing = () => {
                       {plan.price}
                     </motion.span>
                     <span className="text-lg font-medium text-muted-foreground">
-                      /month
+                      {t("pricing.perMonth")}
                     </span>
                   </div>
                   {plan.setupFee > 0 ? (
@@ -350,7 +352,7 @@ export const Pricing = () => {
                       transition={{ delay: 0.6 }}
                     >
                       <Check className="w-4 h-4" />
-                      No setup fee required
+                      {t("pricing.noSetup")}
                     </motion.p>
                   )}
                 </div>
@@ -373,7 +375,7 @@ export const Pricing = () => {
                         <Check className="w-3.5 h-3.5 text-white" />
                       </motion.div>
                       <span className="text-base leading-relaxed text-card-foreground dark:text-white font-medium">
-                        {feature}
+                        {t(`pricing.plan.${index}.features.${fIndex}`)}
                       </span>
                     </motion.li>
                   ))}
@@ -403,7 +405,7 @@ export const Pricing = () => {
                       }}
                     />
                     <span className="relative flex items-center justify-center gap-2">
-                      Get Started
+                      {t("pricing.cta")}
                       <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                     </span>
                   </Button>
@@ -414,13 +416,13 @@ export const Pricing = () => {
         </div>
 
         <motion.p 
-    className="text-center text-muted-foreground mt-10 sm:mt-12 md:mt-16 lg:mt-20 max-w-3xl mx-auto leading-relaxed text-sm sm:text-base px-4"
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.6, delay: 0.5 }}
-  >
-    All plans are billed monthly with no long-term contracts. Upgrade or downgrade anytime. Typical turnaround 24–72h depending on volume.
+          className="text-center text-muted-foreground mt-10 sm:mt-12 md:mt-16 lg:mt-20 max-w-3xl mx-auto leading-relaxed text-sm sm:text-base px-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
+          {t("pricing.footer")}
         </motion.p>
       </div>
     </motion.section>

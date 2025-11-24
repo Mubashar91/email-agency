@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import { motion } from "framer-motion";
 import { HelpCircle, Shield, Zap } from "lucide-react";
+import { useI18n } from "@/components/I18nProvider";
 
 const faqs = [
   {
@@ -39,6 +40,7 @@ const faqs = [
 ];
 
 export const FAQ = () => {
+  const { t } = useI18n();
   return (
     <motion.section 
       id="faq"
@@ -71,17 +73,17 @@ export const FAQ = () => {
             >
               <div className="px-4 py-2 bg-gradient-to-br from-[hsl(var(--brand-blue))] via-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] backdrop-blur-sm rounded-full text-sm font-semibold text-white flex items-center gap-2 border border-[hsl(var(--brand-blue))]/20">
                 <HelpCircle className="w-4 h-4" />
-                <span>Email Management FAQs</span>
+                <span>{t("faq.badge")}</span>
               </div>
             </motion.div>
 
             {/* Heading - Centered */}
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6 text-foreground dark:text-white px-2" style={{ textAlign: 'center' }}>
-              Frequently Asked <span className="bg-gradient-to-r from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">Questions</span>
+              {t("faq.title.before")}<span className="bg-gradient-to-r from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">{t("faq.title.highlight")}</span>
             </h2>
             {/* Description - Centered */}
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground dark:text-card-foreground/80 max-w-2xl leading-relaxed px-2 text-center mx-auto">
-              Everything you need to know about our Email Management services—platforms, security, automation, reporting, and timelines.
+              {t("faq.subtitle")}
             </p>
           </motion.div>
 
@@ -109,11 +111,11 @@ export const FAQ = () => {
                         <span className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[hsl(var(--gold))] dark:bg-[hsl(var(--gold))] flex items-center justify-center text-white text-sm font-bold mt-0.5">
                           {index + 1}
                         </span>
-                        <span className="flex-1">{faq.question}</span>
+                        <span className="flex-1">{t(`faq.items.${index}.q`)}</span>
                       </span>
                     </AccordionTrigger>
                     <AccordionContent className="text-sm sm:text-base text-card-foreground dark:text-card-foreground/85 leading-relaxed pt-2 pb-5 sm:pb-6 pl-9 sm:pl-10">
-                      {faq.answer}
+                      {t(`faq.items.${index}.a`)}
                     </AccordionContent>
                   </AccordionItem>
                 </motion.div>
@@ -136,10 +138,10 @@ export const FAQ = () => {
                 </div>
                 <div>
                   <h3 className="text-base sm:text-lg font-bold text-foreground dark:text-white mb-1.5">
-                    Security & Compliance
+                    {t("faq.trust.security.title")}
                   </h3>
                   <p className="text-sm text-muted-foreground dark:text-card-foreground/80 leading-relaxed">
-                    End-to-end encryption, two-factor authentication, GDPR compliance, and enterprise-grade security protocols.
+                    {t("faq.trust.security.desc")}
                   </p>
                 </div>
               </div>
@@ -152,10 +154,10 @@ export const FAQ = () => {
                 </div>
                 <div>
                   <h3 className="text-base sm:text-lg font-bold text-foreground dark:text-white mb-1.5">
-                    Complete Email Management
+                    {t("faq.trust.complete.title")}
                   </h3>
                   <p className="text-sm text-muted-foreground dark:text-card-foreground/80 leading-relaxed">
-                    Inbox Organization • Response Management • Automation • Security • Reporting • Campaign Management
+                    {t("faq.trust.complete.desc")}
                   </p>
                 </div>
               </div>
@@ -171,23 +173,23 @@ export const FAQ = () => {
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           >
             <p className="text-base sm:text-lg md:text-xl font-semibold text-foreground dark:text-white mb-2">
-              Still have questions?
+              {t("faq.cta.title")}
             </p>
             <p className="text-sm sm:text-base text-muted-foreground dark:text-card-foreground/80 mb-4 sm:mb-5">
-              Our team is here to help. Get in touch and we'll respond within 2 hours.
+              {t("faq.cta.desc")}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a 
                 href="#contact" 
                 className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-[hsl(217,91%,65%)] to-[hsl(220,90%,60%)] text-white font-semibold rounded-xl hover:from-[hsl(217,91%,70%)] hover:to-[hsl(220,95%,65%)] transition-all duration-300 hover:scale-105 border-0"
               >
-                Contact Support
+                {t("faq.cta.contact")}
               </a>
               <a 
                 href="#pricing" 
                 className="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-[hsl(217,91%,65%)] text-[hsl(217,91%,65%)] dark:text-[hsl(217,91%,75%)] font-semibold rounded-xl hover:bg-[hsl(217,91%,65%)]/10 transition-all duration-300"
               >
-                View Pricing
+                {t("faq.cta.pricing")}
               </a>
             </div>
           </motion.div>

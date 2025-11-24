@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { TrendingUp, Users, Clock, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useI18n } from "@/components/I18nProvider";
 
 interface CaseStudy {
   id: number;
@@ -89,6 +90,7 @@ export { caseStudies };
 
 export const CaseStudies = () => {
   const navigate = useNavigate();
+  const { t } = useI18n();
 
   return (
     <motion.section
@@ -109,13 +111,13 @@ export const CaseStudies = () => {
           transition={{ duration: 0.6 }}
         >
           <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-br from-[hsl(var(--gold))] via-[hsl(var(--brand-blue))] to-[hsl(var(--gold))] text-white text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
-            Success Stories
+            {t("cases.badge")}
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-foreground dark:text-white">
-            Email Management Success Stories
+            {t("cases.title")}
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl leading-relaxed">
-            See how we transformed email chaos into organized efficiency with smart automation, security protocols, and professional management.
+            {t("cases.subtitle")}
           </p>
         </motion.div>
 
@@ -172,15 +174,15 @@ export const CaseStudies = () => {
                 <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-4 sm:mb-5 pb-4 sm:pb-5 border-b border-[hsl(220,40%,92%)] dark:border-border/50">
                   <div className="text-center">
                     <div className="text-foreground dark:text-white font-bold text-sm sm:text-base lg:text-lg">{study.stats.mainResult}</div>
-                    <div className="text-[10px] sm:text-xs text-[hsl(217,91%,65%)] dark:text-[hsl(217,91%,75%)]">Result</div>
+                    <div className="text-[10px] sm:text-xs text-[hsl(217,91%,65%)] dark:text-[hsl(217,91%,75%)]">{t("cases.stats.result")}</div>
                   </div>
                   <div className="text-center">
                     <div className="text-foreground dark:text-white font-bold text-sm sm:text-base lg:text-lg">{study.stats.seoFocus}</div>
-                    <div className="text-[10px] sm:text-xs text-[hsl(217,91%,65%)] dark:text-[hsl(217,91%,75%)]">Focus</div>
+                    <div className="text-[10px] sm:text-xs text-[hsl(217,91%,65%)] dark:text-[hsl(217,91%,75%)]">{t("cases.stats.focus")}</div>
                   </div>
                   <div className="text-center">
                     <div className="text-foreground dark:text-white font-bold text-sm sm:text-base lg:text-lg">{study.stats.timeframe}</div>
-                    <div className="text-[10px] sm:text-xs text-[hsl(217,91%,65%)] dark:text-[hsl(217,91%,75%)]">Timeframe</div>
+                    <div className="text-[10px] sm:text-xs text-[hsl(217,91%,65%)] dark:text-[hsl(217,91%,75%)]">{t("cases.stats.timeframe")}</div>
                   </div>
                 </div>
 
@@ -196,8 +198,8 @@ export const CaseStudies = () => {
 
                 {/* Read more */}
                 <div className="flex items-center gap-1 sm:gap-2 text-[hsl(217,91%,65%)] dark:text-[hsl(217,91%,75%)] font-semibold text-xs sm:text-sm group-hover:gap-2 sm:group-hover:gap-3 transition-all">
-                  <span className="hidden sm:inline">View Full Case Study</span>
-                  <span className="sm:hidden">View Study</span>
+                  <span className="hidden sm:inline">{t("cases.read.full")}</span>
+                  <span className="sm:hidden">{t("cases.read.short")}</span>
                   <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
                 </div>
               </div>
@@ -214,11 +216,11 @@ export const CaseStudies = () => {
           className="mt-8 sm:mt-12 lg:mt-16 text-center"
         >
           <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-4 sm:mb-6">
-            Ready to write your own success story?
+            {t("cases.cta.prompt")}
           </p>
           <button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] text-white font-semibold text-sm sm:text-base rounded-lg sm:rounded-xl hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-lg">
-            <span className="hidden sm:inline">Book Your Free Consultation →</span>
-            <span className="sm:hidden">Get Started →</span>
+            <span className="hidden sm:inline">{t("cases.cta.button.full")}</span>
+            <span className="sm:hidden">{t("cases.cta.button.short")}</span>
           </button>
         </motion.div>
       </div>

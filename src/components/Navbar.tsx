@@ -3,11 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/ThemeProvider";
 import { Menu, X, Sun, Moon } from "lucide-react";
+import { useI18n } from "@/components/I18nProvider";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
+  const { t, lang, setLang } = useI18n();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +23,8 @@ export const Navbar = () => {
     if (theme === "light") setTheme("dark");
     else setTheme("light");
   };
+
+  const toggleLang = () => setLang(lang === "en" ? "de" : "en");
 
   const getThemeIcon = () => {
     // Default to light if theme is system or undefined
@@ -43,11 +47,11 @@ export const Navbar = () => {
   };
 
   const navItems = [
-    { name: "Services", href: "#services" },
-    { name: "How It Works", href: "#how-it-works" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "FAQ", href: "#faq" },
+    { name: t("nav.services"), href: "#services" },
+    { name: t("nav.how"), href: "#how-it-works" },
+    { name: t("nav.pricing"), href: "#pricing" },
+    { name: t("nav.testimonials"), href: "#testimonials" },
+    { name: t("nav.faq"), href: "#faq" },
   ];
 
   return (
@@ -131,6 +135,36 @@ export const Navbar = () => {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.45 }}
+            >
+              <Button
+                variant="secondary"
+                size="sm"
+                onClick={toggleLang}
+                className="text-sm md:text-sm lg:text-base px-3 md:px-3 lg:px-4 py-2 md:py-2 lg:py-2.5 cursor-pointer"
+                aria-label="Toggle language"
+              >
+                {lang === 'en' ? t('nav.lang.de') : t('nav.lang.en')}
+              </Button>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.48 }}
+            >
+              <Button
+                variant="gold-outline"
+                size="sm"
+                onClick={() => (window.location.href = '/contact')}
+                className="text-sm md:text-sm lg:text-base px-4 md:px-4 lg:px-6 py-2 md:py-2 lg:py-2.5 cursor-pointer whitespace-nowrap"
+                aria-label="Contact Us"
+              >
+                {t('contact.title')}
+              </Button>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
               <Button
@@ -139,7 +173,7 @@ export const Navbar = () => {
                 onClick={() => window.location.href = '/book-meeting'}
                 className="text-sm md:text-sm lg:text-base px-4 md:px-4 lg:px-7 py-2 md:py-2 lg:py-2.5 cursor-pointer bg-gradient-to-r from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] hover:opacity-95 text-white border-0 hover:shadow-lg hover:shadow-[hsl(var(--brand-blue))]/30 transition-all duration-300 hover:scale-105 font-semibold whitespace-nowrap"
               >
-                Book a Consultation
+                {t('nav.cta')}
               </Button>
             </motion.div>
           </div>
@@ -161,6 +195,15 @@ export const Navbar = () => {
               <AnimatePresence mode="wait">
                 {getThemeIcon()}
               </AnimatePresence>
+            </Button>
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={toggleLang}
+              className="px-3 py-2"
+              aria-label="Toggle language"
+            >
+              {lang === 'en' ? t('nav.lang.de') : t('nav.lang.en')}
             </Button>
             <Button
               variant="ghost"
@@ -215,11 +258,18 @@ export const Navbar = () => {
                   className="pt-3 px-3 border-t border-border/50"
                 >
                   <Button
+                    variant="gold-outline"
+                    onClick={() => (window.location.href = '/contact')}
+                    className="w-full text-base py-3 cursor-pointer font-semibold mb-2"
+                  >
+                    {t('contact.title')}
+                  </Button>
+                  <Button
                     variant="gold"
                     onClick={() => window.location.href = '/book-meeting'}
                     className="w-full text-base py-3 cursor-pointer font-semibold bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] hover:opacity-95 text-white border-0 hover:shadow-lg transition-all duration-300"
                   >
-                    Book a Consultation
+                    {t('nav.cta')}
                   </Button>
                 </motion.div>
               </div>

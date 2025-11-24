@@ -1,6 +1,7 @@
 import { Mail, Inbox, Send, Filter, BarChart3, Sparkles } from "lucide-react";
 import { motion, useInView, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { useI18n } from "@/components/I18nProvider";
 
 const services = [
   {
@@ -44,6 +45,7 @@ const services = [
 export const Services = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const { t } = useI18n();
 
   return (
     <motion.section 
@@ -72,13 +74,13 @@ export const Services = () => {
         >
           <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 bg-gradient-to-br from-[hsl(var(--gold))] via-[hsl(var(--brand-blue))] to-[hsl(var(--gold))] text-white text-xs sm:text-sm md:text-base font-semibold rounded-full mb-3 sm:mb-4 shadow-[0_8px_24px_-6px_rgba(0,123,255,0.4)] border border-white/20 backdrop-blur-sm relative overflow-hidden">
             <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-50"></span>
-            <span className="relative z-10">Email Management Services</span>
+            <span className="relative z-10">{t("services.badge")}</span>
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-foreground dark:text-white leading-tight tracking-tight">
-            Complete <span className="text-primary">Email Solutions</span>
+            {t("services.title.before")}<span className="text-primary">{t("services.title.highlight")}</span>
           </h2>
           <p className="text-base sm:text-lg md:text-lg lg:text-xl text-muted-foreground max-w-3xl leading-relaxed px-2 dark:text-white/90">
-            From inbox management to campaign execution—organized, optimized, and managed with professional care and attention to detail.
+            {t("services.subtitle")}
           </p>
         </motion.div>
 
@@ -130,14 +132,14 @@ export const Services = () => {
                 </motion.div>
                 <div className="flex-1 w-full">
                   <h3 className="text-xl sm:text-2xl md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 md:mb-3 text-foreground dark:text-white transition-colors duration-300">
-                    {service.title}
+                    {t(`services.items.${index}.title`)}
                   </h3>
                   <p className="text-sm sm:text-base md:text-sm lg:text-base text-muted-foreground mb-3 sm:mb-4 md:mb-4 leading-relaxed dark:text-white/90">
-                    {service.description}
+                    {t(`services.items.${index}.description`)}
                   </p>
                   <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 md:px-3.5 md:py-1.5 lg:px-4 lg:py-2 bg-card border border-[hsl(var(--gold))]/30 dark:border-[hsl(var(--gold))]/50 rounded-full text-[hsl(var(--gold))] dark:text-[hsl(var(--gold))] text-xs sm:text-sm md:text-xs lg:text-sm font-semibold group-hover:bg-gradient-to-r group-hover:from-[hsl(var(--gold))] group-hover:to-[hsl(var(--brand-blue))] group-hover:text-white group-hover:border-transparent transition-all duration-500">
                     <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-3.5 md:h-3.5 lg:w-4 lg:h-4 mr-1.5 sm:mr-2 md:mr-1.5 lg:mr-2" />
-                    <span className="leading-none">{service.benefit}</span>
+                    <span className="leading-none">{t(`services.items.${index}.benefit`)}</span>
                   </div>
                 </div>
               </div>

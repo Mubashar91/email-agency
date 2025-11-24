@@ -1,6 +1,7 @@
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { useI18n } from "@/components/I18nProvider";
 
 const testimonials = [
   {
@@ -27,6 +28,7 @@ const testimonials = [
 ];
 
 export const Testimonials = () => {
+  const { t } = useI18n();
   return (
     <motion.section 
       id="testimonials"
@@ -45,10 +47,10 @@ export const Testimonials = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-foreground dark:text-white leading-tight tracking-tight px-2">
-            Trusted by <span className="text-primary">500+ Professionals</span>
+            {t("testimonials.title.before")}<span className="text-primary">{t("testimonials.title.highlight")}</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl px-2 dark:text-white/90">
-            Real results—inbox zero achieved, response times reduced by 75%, and email productivity increased across all industries.
+            {t("testimonials.subtitle")}
           </p>
         </motion.div>
 
@@ -92,7 +94,7 @@ export const Testimonials = () => {
               </div>
               
               <p className="text-sm sm:text-base text-foreground mb-4 sm:mb-5 md:mb-6 leading-relaxed dark:text-white/90">
-                "{testimonial.content}"
+                "{t(`testimonials.items.${index}.content`)}"
               </p>
               
               <div className="border-t border-[hsl(220,40%,92%)] dark:border-border/50 pt-3 sm:pt-4">
@@ -113,16 +115,16 @@ export const Testimonials = () => {
         >
           <div className="text-left">
             <span className="inline-block px-3 py-1 bg-card dark:bg-[hsl(250,45%,20%)]/50 text-[hsl(var(--gold))] dark:text-[hsl(var(--gold))] text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
-              Success Story
+              {t("testimonials.story.badge")}
             </span>
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-foreground">
-              Case Study: <span className="text-primary">75% Time Saved with Email Management</span>
+              {t("testimonials.story.title.before")}<span className="text-primary">{t("testimonials.story.title.highlight")}</span>
             </h3>
             <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-5 sm:mb-6 leading-relaxed max-w-3xl">
-              See how we helped a Fortune 500 executive achieve inbox zero and reduce email processing time from 4 hours to 1 hour daily.
+              {t("testimonials.story.desc")}
             </p>
             <Button size="lg" className="w-full sm:w-auto text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[hsl(var(--gold))] to-[hsl(var(--brand-blue))] text-white hover:opacity-95 transition-all duration-300 hover:scale-105 font-semibold border-0">
-              View Full Case Study
+              {t("testimonials.story.button")}
             </Button>
           </div>
         </motion.div>
