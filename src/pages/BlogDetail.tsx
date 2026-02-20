@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
+import { useI18n } from "@/components/I18nProvider";
 
 interface BlogPost {
   id: number;
@@ -178,6 +179,15 @@ const blogPosts: BlogPost[] = [
 const BlogDetail = () => {
   const navigate = useNavigate();
   const { id } = useParams();
+  const { t } = useI18n();
+  const categoryKeyMap: Record<string, string> = {
+    "Best Practices": "blog.category.best-practices",
+    "Automation": "blog.category.automation",
+    "Security": "blog.category.security",
+    "Etiquette": "blog.category.etiquette",
+    "Campaigns": "blog.category.campaigns",
+    "Analytics": "blog.category.analytics",
+  };
   
   const post = blogPosts.find(p => p.id === Number(id));
 
@@ -185,12 +195,12 @@ const BlogDetail = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Blog Post Not Found</h1>
+          <h1 className="text-4xl font-bold mb-4">{t("blogDetail.notFoundTitle")}</h1>
           <button
             onClick={() => navigate('/')}
             className="text-gold hover:underline"
           >
-            Return to Home
+            {t("blogDetail.returnHome")}
           </button>
         </div>
       </div>
@@ -219,7 +229,7 @@ const BlogDetail = () => {
             transition={{ duration: 0.5 }}
           >
             <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-translate-x-1 transition-transform" />
-            <span>Back to Home</span>
+            <span>{t("blogDetail.backToHome")}</span>
           </motion.button>
 
           <article className="max-w-4xl mx-auto">
@@ -246,11 +256,18 @@ const BlogDetail = () => {
               className="mb-6 sm:mb-8 lg:mb-10"
             >
               <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-gold/10 text-gold text-xs sm:text-sm font-semibold rounded-full mb-4 sm:mb-6 border border-gold/20">
-                {post.category}
+                {(() => {
+                  const key = categoryKeyMap[post.category];
+                  return key ? t(key) : post.category;
+                })()}
               </span>
               
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 text-foreground leading-tight">
-                {post.title}
+                {(() => {
+                  const k = `blog.post.${post.id}.title` as const;
+                  const translated = t(k);
+                  return translated && !translated.startsWith('blog.post.') ? translated : post.title;
+                })()}
               </h1>
 
               <div className="flex flex-wrap items-center gap-3 sm:gap-4 lg:gap-6 text-xs sm:text-sm md:text-base text-muted-foreground pb-6 sm:pb-8 border-b border-border">
@@ -282,7 +299,12 @@ const BlogDetail = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="prose prose-sm sm:prose-base lg:prose-lg prose-headings:text-foreground prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:font-bold prose-h2:mb-4 prose-h2:mt-8 prose-h3:text-xl sm:prose-h3:text-2xl prose-h3:font-bold prose-h3:mb-3 prose-h3:mt-6 prose-p:text-muted-foreground prose-p:leading-relaxed prose-strong:text-foreground prose-ul:text-muted-foreground prose-li:text-muted-foreground prose-li:my-1 max-w-none mb-10 sm:mb-12"
             >
-              <div dangerouslySetInnerHTML={{ __html: post.content }} />
+              {(() => {
+                const k = `blog.post.${post.id}.content` as const;
+                const translated = t(k);
+                const html = translated && !translated.startsWith('blog.post.') ? translated : post.content;
+                return <div dangerouslySetInnerHTML={{ __html: html }} />;
+              })()}
             </motion.div>
 
             {/* CTA at bottom */}
@@ -297,14 +319,14 @@ const BlogDetail = () => {
               
               <div className="relative z-10">
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-foreground">
-                  Ready to Transform Your Business?
+                  {t("blogDetail.cta.title")}
                 </h3>
                 <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-5 sm:mb-6 max-w-2xl mx-auto leading-relaxed">
-                  Book a free consultation and discover how virtual assistants can help you scale.
+                  {t("blogDetail.cta.desc")}
                 </p>
                 <button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gold text-foreground font-semibold text-sm sm:text-base rounded-lg sm:rounded-xl hover:bg-gold/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
-                  <span className="hidden sm:inline">Book Free Consultation →</span>
-                  <span className="sm:hidden">Get Started →</span>
+                  <span className="hidden sm:inline">{t("blogDetail.cta.primary.full")}</span>
+                  <span className="sm:hidden">{t("blogDetail.cta.primary.short")}</span>
                 </button>
               </div>
             </motion.div>
@@ -316,7 +338,7 @@ const BlogDetail = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="mt-12 sm:mt-16 pt-10 sm:pt-12 border-t border-border"
             >
-              <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-foreground">More Articles</h3>
+              <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-foreground">{t("blogDetail.more")}</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 {blogPosts.filter(p => p.id !== post.id).slice(0, 2).map((relatedPost) => (
                   <motion.div
@@ -332,14 +354,25 @@ const BlogDetail = () => {
                         className="w-full h-36 sm:h-40 object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute top-3 left-3">
-                        <span className="px-2 py-1 bg-gold text-foreground text-xs font-bold rounded-full">{relatedPost.category}</span>
+                        <span className="px-2 py-1 bg-gold text-foreground text-xs font-bold rounded-full">{(() => {
+                          const key = categoryKeyMap[relatedPost.category];
+                          return key ? t(key) : relatedPost.category;
+                        })()}</span>
                       </div>
                     </div>
                     <div className="p-4 sm:p-5">
                       <h4 className="text-base sm:text-lg font-bold mb-2 text-foreground group-hover:text-gold transition-colors line-clamp-2">
-                        {relatedPost.title}
+                        {(() => {
+                          const k = `blog.post.${relatedPost.id}.title` as const;
+                          const translated = t(k);
+                          return translated && !translated.startsWith('blog.post.') ? translated : relatedPost.title;
+                        })()}
                       </h4>
-                      <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2 leading-relaxed">{relatedPost.excerpt}</p>
+                      <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2 leading-relaxed">{(() => {
+                        const k = `blog.post.${relatedPost.id}.excerpt` as const;
+                        const translated = t(k);
+                        return translated && !translated.startsWith('blog.post.') ? translated : relatedPost.excerpt;
+                      })()}</p>
                     </div>
                   </motion.div>
                 ))}

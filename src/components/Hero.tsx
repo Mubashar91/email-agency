@@ -2,10 +2,12 @@ import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, Calendar, Sparkles, Mail, Inbox, Award } from "lucide-react";
+import { useI18n } from "@/components/I18nProvider";
 
 export const Hero = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const { t } = useI18n();
   
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -42,15 +44,16 @@ export const Hero = () => {
             }}
           >
             <div className="inline-block mb-3 sm:mb-4 md:mb-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-primary text-primary-foreground rounded-full text-xs sm:text-sm font-semibold">
-              Professional Email Management Solutions
+              {t("hero.badge")}
             </div>
             
             <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extrabold mb-4 sm:mb-5 md:mb-6 leading-[1.15] sm:leading-[1.12] md:leading-[1.1] tracking-tight text-foreground">
-              Master Your <span className="text-primary">Inbox & Achieve Zero</span>
+              {t("hero.title").split("Inbox & Achieve Zero")[0]}
+              <span className="text-primary">{t("hero.title").includes("Inbox") ? "Inbox & Achieve Zero" : ""}</span>
             </h1>
             
             <p className="text-base sm:text-lg md:text-xl lg:text-xl text-muted-foreground mb-6 sm:mb-7 md:mb-8 leading-relaxed max-w-xl font-normal dark:text-white/90">
-              We transform email chaos into organized productivity. Our expert team manages your inbox, automates workflows, and ensures you never miss important messages—saving you 15+ hours per week.
+              {t("hero.subtitle")}
             </p>
             
             <motion.div
@@ -64,7 +67,7 @@ export const Hero = () => {
                   size="lg"
                   onClick={() => window.location.href = '/book-meeting'}
                   className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 rounded-lg font-semibold transition-colors relative overflow-hidden group"
-                  aria-label="Book a free 30-minute design consultation"
+                  aria-label={t("hero.cta.aria")}
                 >
                   <motion.span 
                     className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent"
@@ -74,8 +77,8 @@ export const Hero = () => {
                   />
                   <span className="flex items-center gap-2 relative z-10">
                     <Mail className="w-5 h-5" aria-hidden="true" />
-                    <span className="hidden sm:inline">Get Free Email Audit</span>
-                    <span className="sm:hidden">Free Audit</span>
+                    <span className="hidden sm:inline">{t("hero.cta.full")}</span>
+                    <span className="sm:hidden">{t("hero.cta.short")}</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </span>
                 </Button>
@@ -102,6 +105,7 @@ export const Hero = () => {
                   <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-gold" aria-hidden="true" />
                 </motion.div>
                 <span className="font-medium">Free inbox audit + personalized strategy included</span>
+                <span className="font-medium">{t("hero.urgency")}</span>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -196,7 +200,7 @@ export const Hero = () => {
                     >
                       <Mail className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-1 text-[hsl(217,91%,75%)] transition-colors" aria-hidden="true" />
                     <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">500+</div>
-                    <div className="text-[9px] sm:text-[10px] md:text-xs text-white/90 font-medium">Clients Served</div>
+                    <div className="text-[9px] sm:text-[10px] md:text-xs text-white/90 font-medium">{t("hero.stat.clients")}</div>
                     </motion.div>
                   </motion.div>
                   
@@ -213,7 +217,7 @@ export const Hero = () => {
                     >
                       <Inbox className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-1 text-[hsl(217,91%,75%)] transition-colors" aria-hidden="true" />
                     <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">15+ Hrs</div>
-                    <div className="text-[9px] sm:text-[10px] md:text-xs text-white/90 font-medium">Saved Per Week</div>
+                    <div className="text-[9px] sm:text-[10px] md:text-xs text-white/90 font-medium">{t("hero.stat.hours")}</div>
                     </motion.div>
                   </motion.div>
                   
@@ -230,7 +234,7 @@ export const Hero = () => {
                     >
                       <Award className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-1 text-[hsl(217,91%,75%)] transition-colors" aria-hidden="true" />
                     <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">99%</div>
-                    <div className="text-[9px] sm:text-[10px] md:text-xs text-white/90 font-medium">Inbox Zero Rate</div>
+                    <div className="text-[9px] sm:text-[10px] md:text-xs text-white/90 font-medium">{t("hero.stat.inboxZero")}</div>
                     </motion.div>
                   </motion.div>
                 </div>

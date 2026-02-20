@@ -1,5 +1,6 @@
 import { Shield, Clock, Zap, Lock } from "lucide-react";
 import { motion } from "framer-motion";
+import { useI18n } from "@/components/I18nProvider";
 
 const values = [
   {
@@ -25,6 +26,7 @@ const values = [
 ];
 
 export const ValueProposition = () => {
+  const { t } = useI18n();
   return (
     <motion.section 
       className="relative py-8 sm:py-10 md:py-12 lg:py-14 bg-background z-10"
@@ -45,7 +47,7 @@ export const ValueProposition = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-            Why <span className="text-[hsl(199,89%,52%)]">500+</span> Professionals Trust Our Email Management
+            {t("value.title.before")}<span className="text-[hsl(199,89%,52%)]">{t("value.title.highlight")}</span>{t("value.title.after")}
           </h2>
         </motion.div>
         
@@ -77,10 +79,10 @@ export const ValueProposition = () => {
                   <value.icon className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-white transition-colors duration-300">
-                  {value.title}
+                  {t(`value.items.${index}.title`)}
                 </h3>
                 <p className="text-blue-50 leading-relaxed">
-                  {value.description}
+                  {t(`value.items.${index}.desc`)}
                 </p>
               </div>
               

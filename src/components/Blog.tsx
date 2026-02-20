@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Calendar, Clock, ArrowRight, Mail, Inbox, Filter, Settings, BarChart3, Shield } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useI18n } from "@/components/I18nProvider";
 
 interface BlogPost {
   id: number;
@@ -134,6 +135,15 @@ const blogPosts: BlogPost[] = [
 
 export const Blog = () => {
   const navigate = useNavigate();
+  const { t } = useI18n();
+  const categoryKeyMap: Record<string, string> = {
+    "Best Practices": "blog.category.best-practices",
+    "Automation": "blog.category.automation",
+    "Security": "blog.category.security",
+    "Etiquette": "blog.category.etiquette",
+    "Campaigns": "blog.category.campaigns",
+    "Analytics": "blog.category.analytics",
+  };
 
   return (
     <motion.section
@@ -154,13 +164,13 @@ export const Blog = () => {
           transition={{ duration: 0.6 }}
         >
           <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-br from-[hsl(var(--gold))] via-[hsl(var(--brand-blue))] to-[hsl(var(--gold))] text-white text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
-            Email Insights
+            {t("blog.badge")}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 text-[hsl(222,47%,11%)] dark:text-foreground">
-            Blog & <span className="bg-gradient-to-r from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">Email Guides</span>
+            {t("blog.title.before")}<span className="bg-gradient-to-r from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-blue))] bg-clip-text text-transparent">{t("blog.title.highlight")}</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl leading-relaxed">
-            Expert email management strategies, automation tips, security best practices, and productivity guides to master your inbox.
+            {t("blog.subtitle")}
           </p>
         </motion.div>
 
@@ -210,7 +220,11 @@ export const Blog = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                   <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
                     <span className="px-2.5 py-1 sm:px-3 backdrop-blur-[2px] bg-card/90 dark:bg-[hsl(var(--gold))] text-[hsl(222,47%,20%)] dark:text-white text-[10px] sm:text-xs font-bold rounded-full shadow-sm">
-                      {post.category}
+                      {((() => {
+                        const key = categoryKeyMap[post.category];
+                        const val = key ? t(key) : post.category;
+                        return val;
+                      })())}
                     </span>
                   </div>
                 </div>
@@ -229,18 +243,26 @@ export const Blog = () => {
                   </div>
 
                   <h3 className="text-sm sm:text-base lg:text-lg font-bold mb-2 sm:mb-3 text-[hsl(222,47%,20%)] dark:text-white transition-colors line-clamp-2">
-                    {post.title}
+                    {( (() => {
+                      const k = `blog.post.${post.id}.title` as const;
+                      const translated = t(k);
+                      return translated && !translated.startsWith('blog.post.') ? translated : post.title;
+                    })() )}
                   </h3>
 
                   <p className="text-xs sm:text-sm text-[hsl(220,30%,50%)] dark:text-white mb-3 sm:mb-4 line-clamp-2 leading-relaxed">
-                    {post.excerpt}
+                    {( (() => {
+                      const k = `blog.post.${post.id}.excerpt` as const;
+                      const translated = t(k);
+                      return translated && !translated.startsWith('blog.post.') ? translated : post.excerpt;
+                    })() )}
                   </p>
 
                   <div className="flex items-center justify-between mt-auto pt-3 border-t border-[hsl(240,40%,92%)] dark:border-[hsl(240,30%,35%)]/50">
-                    <span className="text-[10px] sm:text-xs text-[hsl(var(--brand-blue))] dark:text-[hsl(var(--brand-blue))] truncate">By {post.author}</span>
+                    <span className="text-[10px] sm:text-xs text-[hsl(var(--brand-blue))] dark:text-[hsl(var(--brand-blue))] truncate">{t("blog.by")} {post.author}</span>
                     <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
                       <button className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-card dark:bg-white/10 text-[hsl(var(--gold))] dark:text-white border border-[hsl(var(--gold))]/30 dark:border-white/20 hover:bg-gradient-to-r hover:from-[hsl(var(--gold))] hover:to-[hsl(var(--brand-blue))] hover:text-white hover:border-transparent transition-all duration-300 shadow-sm">
-                        <span className="hidden sm:inline">Read</span>
+                        <span className="hidden sm:inline">{t("blog.read")}</span>
                         <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                       </button>
                     </div>
